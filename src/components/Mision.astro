@@ -7,7 +7,7 @@
         <div class="content-left">
             <div class="column">
                 <div class="icon">
-                    <img src="goal.png" alt="vision" />
+                    <img src="img/goal.png" alt="vision" />
                 </div>
 
                 <div class="title">
@@ -28,7 +28,7 @@
         <div class="content-right">
             <div class="column">
                 <div class="icon">
-                    <img src="goal.png" alt="vision" />
+                    <img src="img/goal.png" alt="vision" />
                 </div>
 
                 <div class="title">
@@ -37,10 +37,10 @@
             </div>
             <div class="description">
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Quidem aut dolore labore impedit necessitatibus suscipit.
-                    Esse optio dolorum magni cum officiis molestiae, saepe
-                    facere iure culpa mollitia? Ad, corporis a.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat laudantium quis esse officiis officia minus fugiat,
+                    atque, temporibus optio illum doloremque vero, magni sit at
+                    odio distinctio explicabo fugit accusamus!
                 </p>
             </div>
         </div>
@@ -60,7 +60,7 @@
         gap: 60px;
         height: 100%;
         padding: 60px 10%;
-        background-color: #d4bdb3;
+        background-color: #ebe4e1;
     }
 
     .content-left,
@@ -76,7 +76,6 @@
 
     .column {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 30px;
@@ -84,6 +83,8 @@
 
     .title {
         text-align: center;
+        width: 180px;
+        overflow: hidden;
     }
 
     .title h1 {
@@ -142,7 +143,6 @@
         .icon {
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .icon img {
@@ -150,7 +150,25 @@
         }
     }
 
+    @media (max-width: 800px) {
+        .column {
+            flex-direction: column;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     @media (max-width: 650px) {
+        .container {
+            padding: 50px 5%;
+        }
+    }
+
+    @media (max-width: 480px) {
         .content-left,
         .content-right {
             flex-direction: column;
@@ -160,6 +178,10 @@
         .container {
             display: block;
             padding: 50px 5%;
+        }
+
+        .column {
+            flex-direction: row;
         }
 
         .description {

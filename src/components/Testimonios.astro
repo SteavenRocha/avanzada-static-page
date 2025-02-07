@@ -1,21 +1,102 @@
 <section>
-    
-    <p>
-        TESTIMONIOS
-    </p>
+    <div class="container">
+        <div class="title">
+            <h1>TESTIMONIOS</h1>
+        </div>
 
+        <div class="content-box">
+            <div class="carruseles" id="slider">
+                <section class="slider-section">
+                    <div class="texto">
+                        <h2>FRANCISCO CAMONES</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Rerum dolorem reiciendis earum et odio iure
+                            assumenda voluptatibus eaque ex quae qui quos,
+                            provident ea nesciunt, animi voluptate quibusdam?
+                            Quod, harum!
+                        </p>
+                    </div>
+                    <img src="img/perfil.avif" />
+                </section>
+                <section class="slider-section">
+                    <img src="slider/1.avif" />
+                </section>
+                <section class="slider-section">
+                    <img src="slider/1.avif" />
+                </section>
+            </div>
+            <div class="acciones"></div>
+        </div>
+    </div>
 </section>
 
 <style>
-    section {
+    .container {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 10%;
+        gap: 60px;
+        border: 1px solid blue;
+    }
+
+    .title {
+        text-align: center;
+        border: 1px solid green;
+    }
+
+    .title h1 {
+        text-transform: uppercase;
+        font-size: clamp(1.5em, 4vw + 1rem, 2.5em);
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .content-box {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+    }
+
+    .carruseles {
+        width: 300%;
+        height: 85%;
+        display: flex;
+    }
+
+    .acciones {
+        height: 15%;
+        border: 1px solid red;
+    }
+
+    .texto {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .slider-section {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 500px;
+        width: calc(100% / 3);
+        height: 100%;
+        gap: 30px;
+        padding: 0 70px;
     }
 
-    section p{
-        font-size: 2rem;
-        font-weight: 900;
+    .slider-section img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 </style>

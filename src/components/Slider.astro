@@ -5,13 +5,13 @@
     <div class="container-carousel">
         <div class="carruseles" id="slider">
             <section class="slider-section">
-                <img src="slider/1.avif" />
+                <img src="img/slider/1.avif" />
             </section>
             <section class="slider-section">
-                <img src="slider/2.avif" />
+                <img src="img/slider/2.avif" />
             </section>
             <section class="slider-section">
-                <img src="slider/3.avif" />
+                <img src="img/slider/3.avif" />
             </section>
         </div>
         <div class="btn-left">
@@ -39,10 +39,10 @@
     </div>
 </section>
 
-<script>
+<script is:inline>
     const btnLeft = document.querySelector(".btn-left"),
         btnRight = document.querySelector(".btn-right"),
-        slider = document.querySelector("#slider") as HTMLElement,
+        slider = document.querySelector("#slider"),
         sliderSection = document.querySelectorAll(".slider-section");
 
     btnLeft?.addEventListener("click", (e) => moveToLeft());

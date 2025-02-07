@@ -1,0 +1,360 @@
+---
+
+---
+
+<section>
+    <div class="container">
+        <div class="title">
+            <h1>Nuestra Historia</h1>
+        </div>
+
+        <div class="content">
+            <div class="content-left" title="Ver video de presentación">
+                <video
+                    class="miniatura"
+                    id="videoTrigger"
+                    src="public/videos/video-presentacion.mp4"
+                    muted></video>
+
+                <div class="btn-play">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        ><path
+                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM10.6219 8.41459L15.5008 11.6672C15.6846 11.7897 15.7343 12.0381 15.6117 12.2219C15.5824 12.2658 15.5447 12.3035 15.5008 12.3328L10.6219 15.5854C10.4381 15.708 10.1897 15.6583 10.0672 15.4745C10.0234 15.4088 10 15.3316 10 15.2526V8.74741C10 8.52649 10.1791 8.34741 10.4 8.34741C10.479 8.34741 10.5562 8.37078 10.6219 8.41459Z"
+                        ></path></svg
+                    >
+                </div>
+            </div>
+
+            <div class="content-right">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus veniam distinctio minus illo nihil dolores facilis
+                    officiis facere, nisi numquam consequatur sed, eius
+                    inventore, error Lorem ipsum dolor sit amet consectetur
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nobis vel ex accusamus ipsa, temporibus eaque neque alias at
+                    earum corrupti labore quas dolorem quod recusandae quaerat
+                    officia libero pariatur magnam? Mollitia laboriosam,
+                    dignissimos excepturi recusandae officiis accusantium,
+                    corrupti delectus commodi quibusdam corporis dolorem laborum
+                    magnam illum, iure aut maxime porro magni sed velit.
+                    Distinctio velit, error voluptas porro reiciendis
+                    consequuntur? Ullam illum quo quis quas blanditiis dolores
+                    sit libero sed voluptas molestiae facilis, officiis illo
+                    error iure odio at harum ex mollitia voluptatibus cumque
+                    explicabo odit saepe? Eveniet, esse pariatur. Quos, quis.
+                    Perspiciatis ad hic architecto autem aliquam repellendus
+                    repudiandae eveniet necessitatibus aspernatur illo, porro
+                    officiis. Excepturi ad, facilis vitae, corporis illo cumque
+                    debitis tempora assumenda provident laboriosam dolorem
+                    commodi. Quo impedit tempore aut quis distinctio laborum
+                    voluptas hic adipisci quam sed ipsa veritatis reprehenderit
+                    inventore eum non nam quisquam fuga odit eligendi pariatur,
+                    beatae obcaecati tempora. Quibusdam, ut minima. Magnam earum
+                    sed eaque officiis ab doloribus velit dolore voluptatem
+                    numquam natus possimus necessitatibus cupiditate, nemo
+                    repudiandae? Numquam maxime ad doloremque consequatur
+                    possimus quas quia sed. Recusandae tenetur eius rem. Fugit
+                    velit maiores officia molestias ea nesciunt id omnis eum
+                    distinctio laborum. Maxime, dolorem dicta fuga provident vel
+                    ut quod, dolorum, architecto molestiae impedit tempore
+                    corrupti pariatur voluptatem quam? Amet. Voluptatem
+                    consectetur maxime, quia necessitatibus officiis, aperiam
+                    corrupti rerum beatae, eveniet fugiat consequatur fugit
+                    optio eos molestiae. Maiores reprehenderit possimus nisi
+                    cumque reiciendis facilis distinctio rerum, unde repellendus
+                    ipsum illum? Dolores, explicabo deleniti, ipsa quos ex sit
+                    nihil accusamus quia quis, molestias eaque nulla minus
+                    laudantium a optio officia reiciendis nobis sunt at. Illo
+                    excepturi ad necessitatibus voluptatem, reprehenderit sed!
+                    Ducimus quisquam eaque ut dignissimos sapiente
+                    necessitatibus iusto ad iure id exercitationem accusantium
+                    pariatur alias nobis sequi unde ullam maxime porro mollitia
+                    iste saepe, eius fugit et laboriosam assumenda? Libero.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="videoModal" class="modal">
+    <span class="close">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            ><path
+                d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+            ></path></svg
+        >
+    </span>
+    <video
+        id="modalVideo"
+        src="public/videos/video-presentacion.mp4"
+        controls
+        muted
+        autoplay></video>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const videoTrigger = document.getElementById(
+            "videoTrigger",
+        ) as HTMLVideoElement;
+        const modal = document.getElementById("videoModal") as HTMLDivElement;
+        const modalVideo = document.getElementById(
+            "modalVideo",
+        ) as HTMLVideoElement;
+        const closeBtn = document.querySelector(".close") as HTMLSpanElement;
+        const btnPlay = document.querySelector(".btn-play") as HTMLDivElement;
+
+        if (videoTrigger && modal && modalVideo && closeBtn && btnPlay) {
+            const openModal = () => {
+                modal.style.display = "flex";
+                modal.classList.remove("closing");
+                modalVideo.play();
+            };
+
+            const closeModal = () => {
+                modal.classList.add("closing");
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    modalVideo.pause();
+                }, 300);
+            };
+
+            videoTrigger.addEventListener("click", openModal);
+            btnPlay.addEventListener("click", openModal);
+
+            closeBtn.addEventListener("click", closeModal);
+
+            window.addEventListener("click", (event: MouseEvent) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    section {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 60px 10%;
+        gap: 60px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .title h1 {
+        text-transform: uppercase;
+        font-size: clamp(1.5em, 4vw + 1rem, 2.5em);
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        height: auto;
+    }
+
+    .content-left,
+    .content-right {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .content-left {
+        flex: 0.8;
+    }
+
+    .content-right {
+        flex: 1;
+    }
+
+    .content-right p {
+        font-weight: 400;
+        /*     font-size: 1.4rem; */
+        font-size: clamp(0.875em, 3vw + 1rem, 1.125em);
+        height: 100%;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 11;
+        -webkit-box-orient: vertical;
+    }
+
+    .miniatura {
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: 0.5s ease;
+        -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.49);
+    }
+
+    .content-left:hover .miniatura,
+    .content-left:hover .btn-play {
+        scale: 1.02;
+    }
+
+    .btn-play {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        font-size: 2rem;
+        background-color: transparent;
+        padding: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #dbdbdbe5;
+        transform: translate(0, -50%);
+        transition: 0.5s ease;
+        user-select: none;
+    }
+
+    .btn-play svg {
+        width: 125px;
+    }
+
+    /* Estilos de la Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.664);
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal.closing {
+        animation: fadeOut 0.3s ease-in-out;
+    }
+
+    .modal video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        object-fit: cover;
+        border: 1px solid var(--primary-color);
+    }
+
+    .close {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 10px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+
+    .close svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .close:hover {
+        background-color: rgba(0, 0, 0, 0.397);
+    }
+
+    @media (max-width: 900px) {
+        .modal video {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 1150px) {
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            gap: 50px;
+        }
+
+        .content {
+            display: block;
+            justify-content: center;
+        }
+
+        .content-left {
+            margin-bottom: 50px;
+        }
+
+        .content-right p {
+            width: 100%;
+        }
+
+        .miniatura {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .btn-play svg {
+            width: 80px;
+        }
+
+        .container {
+            padding: 30px 5%;
+            gap: 30px;
+        }
+
+        .content-left {
+            margin-bottom: 30px;
+        }
+    }
+
+    /* Animación para el modal */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style>

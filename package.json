@@ -1,0 +1,16 @@
+{
+  "name": "avanzada-static-page",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/jost": "^5.1.2",
+    "@fontsource/poppins": "^5.1.1",
+    "astro": "^5.2.3"
+  }
+}

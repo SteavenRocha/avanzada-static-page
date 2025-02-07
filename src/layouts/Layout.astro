@@ -1,0 +1,300 @@
+---
+// FUENTE: POPPINS -> STATIC - Todas las fuentes de poppins
+/* import "@fontsource/poppins/100.css";
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/900.css"; */
+// Supports weights 100-900
+import "@fontsource-variable/jost";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Página web estática para una panadería, diseñada para mostrar información sobre sus productos, servicios y contacto." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<!--- Parte izquierda del nav - logo --->
+			<a class="nav__logo">LOGO</a>
+
+			<!--- Lista del nav --->
+			<nav>
+				<ul class="nav__links" id="nav-links">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Noticias</a></li>
+					<li><a href="#">Galeria</a></li>
+					<li><a href="#">Productos</a></li>
+					<li><a href="#">Beneficios</a></li>
+					<li><a href="#">Contáctanos</a></li>
+				</ul>
+			</nav>
+
+			<!--- Sección de la derecha del navbar - boton para iniciar sesión y menu --->
+			<div class="right__content">
+				<a href="#" class="sign__in__btn">Acceder</a>
+
+				<button class="menu-btn">
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
+			</div>
+		</header>
+		
+		<slot />
+	</body>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const header = document.querySelector("header");
+			const menu = document.querySelector(".menu-btn");
+			const navlist = document.querySelector(".nav__links");
+
+			window.addEventListener("scroll", () => {
+				header?.classList.toggle("sticky", window.scrollY > 0);
+			});
+
+			if (menu && navlist) {
+				menu.addEventListener("click", () => {
+					navlist.classList.toggle("open");
+					document.body.classList.toggle("no-scroll");
+				});
+			}
+		});
+	</script>
+</html>
+
+<style is:global>
+	html,
+	body,
+	* {
+		font-family: "Jost Variable", sans-serif;
+		/* font-family: "Poppins", sans-serif; */
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		text-decoration: none;
+	}
+
+	:root {
+		--primary-color: #ff833e;
+		--primary-color-dark: #db6f35;
+		--text-dark: #333333;
+		--text-light: #767268;
+		--white: #ffffff;
+
+		--p-font: 1rem;
+		--weight-font-list-navbar: 600;
+	}
+
+	/* HEADER */
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: 0.5s;
+		padding: 20px 10%;
+		z-index: 10;
+		border-bottom: 0.2px solid white;
+	}
+
+	header.sticky {
+		background-color: var(--white);
+		padding: 15px 10%;
+		transition: padding 0.5s ease-in-out;
+	}
+
+	header.sticky ul li a {
+		color: var(--text-dark);
+	}
+
+	/* NAV */
+	nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	button.menu-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 2rem;
+		border: 0;
+		background: transparent;
+		gap: 0.65rem;
+	}
+
+	button.menu-btn > div {
+		background: black;
+		height: 2px;
+		width: 100%;
+		transition: all 0.5s;
+		transform-origin: left;
+	}
+
+	/* LOGO DEL NAVBAR */
+	header .nav__logo {
+		position: relative;
+		font-size: 1.5rem;
+		font-weight: 900;
+		color: var(--primary-color);
+		letter-spacing: 2px;
+	}
+
+	/* LISTA DEL NAVBAR */
+	header ul {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	header ul li {
+		list-style: none;
+	}
+
+	header ul li a {
+		position: relative;
+		margin: 0 15px;
+		color: var(--white);
+		letter-spacing: 1.5px;
+		font-weight: var(--weight-font-list-navbar);
+		transition: 0.5s;
+		font-size: var(--p-font);
+		/* 	text-transform: uppercase; */
+	}
+
+	header ul li a:hover {
+		color: var(--primary-color);
+	}
+
+	.right__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.right__content a {
+		padding: 8px 15px;
+		background-color: var(--primary-color);
+		color: var(--white);
+		font-weight: 600;
+		transition: all 0.5s ease-in-out;
+	}
+
+	.right__content a:hover {
+		background-color: var(--primary-color-dark);
+	}
+
+	.right__content .menu-btn {
+		display: none;
+	}
+
+	@media (max-width: 1150px) {
+		.right__content .menu-btn {
+			display: flex;
+			cursor: pointer;
+		}
+
+		header ul {
+			position: fixed;
+			display: block;
+			width: 35%;
+			height: 100vh;
+			top: 80px;
+			right: -100%;
+			padding: 40px 30px;
+			background-color: white;
+			transition:
+				top 0.5s ease-in-out,
+				right 0.5s ease-in-out;
+		}
+
+		header ul li a {
+			font-size: 1.5rem;
+			color: var(--text-dark);
+			padding: 10px 0;
+			text-decoration: none;
+			display: block;
+			transition: color 0.3s ease;
+		}
+
+		header.sticky ul {
+			top: 70px;
+		}
+
+		header:not(.sticky) ul.open {
+			background-color: white;
+			transition:
+				top 0.5s ease-in-out,
+				right 0.5s ease-in-out;
+			top: 80px;
+		}
+
+		header:not(.sticky) ul.open a {
+			color: var(--text-dark);
+		}
+
+		header ul.open {
+			right: 0;
+		}
+	}
+
+	@media (max-width: 900px) {
+		header ul {
+			width: 40%;
+		}
+	}
+
+	@media (max-width: 650px) {
+		header ul {
+			width: 60%;
+		}
+
+		header {
+			padding: 20px 5%;
+		}
+
+		header.sticky{
+			padding: 15px 5%;
+		}
+	}
+
+	@media (max-width: 450px) {
+		header.sticky ul {
+			width: 100%;
+		}
+
+		header:not(.sticky) ul {
+			width: 100%;
+		}
+
+		body.no-scroll {
+			overflow: hidden;
+		}
+	}
+</style>

@@ -1,0 +1,169 @@
+---
+
+---
+
+<section>
+    <div class="container">
+        <div class="content-left">
+            <div class="column">
+                <div class="icon">
+                    <img src="public/goal.png" alt="vision" />
+                </div>
+
+                <div class="title">
+                    <h1>Misión</h1>
+                </div>
+            </div>
+
+            <div class="description">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quidem aut dolore labore impedit necessitatibus suscipit.
+                    Esse optio dolorum magni cum officiis molestiae, saepe
+                    facere iure culpa mollitia? Ad, corporis a.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <div class="column">
+                <div class="icon">
+                    <img src="public/goal.png" alt="vision" />
+                </div>
+
+                <div class="title">
+                    <h1>Visión</h1>
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quidem aut dolore labore impedit necessitatibus suscipit.
+                    Esse optio dolorum magni cum officiis molestiae, saepe
+                    facere iure culpa mollitia? Ad, corporis a.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        height: 100%;
+        padding: 60px 10%;
+        background-color: #d4bdb3;
+    }
+
+    .content-left,
+    .content-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        gap: 30px;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .title h1 {
+        text-transform: uppercase;
+        font-size: clamp(1.5em, 4vw + 1rem, 2.5em);
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .description p {
+        font-weight: 400;
+        font-size: clamp(0.875em, 3vw + 1rem, 1.125em);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+    }
+
+    .icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icon img {
+        width: 100%;
+    }
+
+    @media (max-width: 1150px) {
+        section {
+            height: auto;
+        }
+
+        .description {
+            padding: 20px 0 20px 20px;
+        }
+
+        .column {
+            gap: 10px;
+        }
+
+        .container {
+            display: block;
+            padding: 30px 10%;
+        }
+
+        .content-left {
+            padding-bottom: 50px;
+        }
+
+        .content-left,
+        .content-right {
+            flex-direction: row;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon img {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .content-left,
+        .content-right {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container {
+            display: block;
+            padding: 50px 5%;
+        }
+
+        .description {
+            padding: 0;
+        }
+    }
+</style>

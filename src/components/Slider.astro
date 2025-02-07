@@ -1,0 +1,161 @@
+---
+---
+
+<section>
+    <div class="container-carousel">
+        <div class="carruseles" id="slider">
+            <section class="slider-section">
+                <img src="public/slider/1.avif" />
+            </section>
+            <section class="slider-section">
+                <img src="public/slider/2.avif" />
+            </section>
+            <section class="slider-section">
+                <img src="public/slider/3.avif" />
+            </section>
+        </div>
+        <div class="btn-left">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                    d="M8.3685 12L13.1162 3.03212L14.8838 3.9679L10.6315 12L14.8838 20.0321L13.1162 20.9679L8.3685 12Z"
+                ></path></svg
+            >
+        </div>
+        <div class="btn-right">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                    d="M15.6315 12L10.8838 3.03212L9.11622 3.9679L13.3685 12L9.11622 20.0321L10.8838 20.9679L15.6315 12Z"
+                ></path></svg
+            >
+        </div>
+
+        <h1>IGLESIA CATOLICA AVANZADA</h1>
+    </div>
+</section>
+
+<script>
+    const btnLeft = document.querySelector(".btn-left"),
+        btnRight = document.querySelector(".btn-right"),
+        slider = document.querySelector("#slider") as HTMLElement,
+        sliderSection = document.querySelectorAll(".slider-section");
+
+    btnLeft?.addEventListener("click", (e) => moveToLeft());
+
+    btnRight?.addEventListener("click", (e) => moveToRight());
+
+    setInterval(() => {
+        moveToRight();
+    }, 5000);
+
+    let operacion = 0,
+        counter = 0,
+        widthImg = 100 / sliderSection.length;
+
+    function moveToRight() {
+        if (counter >= sliderSection.length - 1) {
+            counter = 0;
+            operacion = 0;
+            slider.style.transform = `translate(-${operacion}%)`;
+            slider.style.transition = "all ease .6s";
+
+            return;
+        }
+        counter++;
+        operacion = operacion + widthImg;
+        slider.style.transform = `translate(-${operacion}%)`;
+        slider.style.transition = "all ease .6s";
+    }
+
+    function moveToLeft() {
+        counter--;
+        if (counter < 0) {
+            counter = sliderSection.length - 1;
+            operacion = widthImg * (sliderSection.length - 1);
+            slider.style.transform = `translate(-${operacion}%)`;
+            slider.style.transition = "all ease .6s";
+            return;
+        }
+        operacion = operacion - widthImg;
+        slider.style.transform = `translate(-${operacion}%)`;
+        slider.style.transition = "all ease .6s";
+    }
+</script>
+
+<style>
+    .container-carousel {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .carruseles {
+        width: 300%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slider-section {
+        width: calc(100% / 3);
+        height: 100%;
+    }
+
+    .slider-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(40%);
+    }
+
+    .btn-left,
+    .btn-right {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        font-size: 1.5rem;
+        background-color: transparent;
+        padding: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #ffffff81;
+        transform: translate(0, -50%);
+        transition: 0.5s ease;
+        user-select: none;
+    }
+
+    .btn-left:hover,
+    .btn-right:hover {
+        scale: 1.2;
+        color: #fff;
+    }
+
+    .btn-left {
+        left: 10px;
+    }
+
+    .btn-right {
+        right: 10px;
+    }
+
+    .btn-left,
+    .btn-right svg {
+        width: 100px;
+    }
+
+    h1 {
+        position: absolute;
+        color: white;
+        top: 50%;
+        font-size: 3rem;
+        left: 150px;
+        padding: 5px;
+        font-weight: 600;
+        transform: translate(0, -50%);
+    }
+</style>

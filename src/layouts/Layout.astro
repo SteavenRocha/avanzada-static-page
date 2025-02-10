@@ -23,7 +23,10 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Página web estática para una panadería, diseñada para mostrar información sobre sus productos, servicios y contacto." />
+		<meta
+			name="description"
+			content="Página web estática para la panaderia de la Iglesia Católica Avanzada"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -46,10 +49,8 @@ const { title } = Astro.props;
 				</ul>
 			</nav>
 
-			<!--- Sección de la derecha del navbar - boton para iniciar sesión y menu --->
-			<div class="right__content">
-				<a href="#" class="sign__in__btn">Acceder</a>
-
+			<!--- Sección de la derecha del navbar - boton menú --->
+			<div class="menu">
 				<button class="menu-btn">
 					<div></div>
 					<div></div>
@@ -57,7 +58,7 @@ const { title } = Astro.props;
 				</button>
 			</div>
 		</header>
-		
+
 		<slot />
 	</body>
 
@@ -86,6 +87,7 @@ const { title } = Astro.props;
 	body,
 	* {
 		font-family: "Jost Variable", sans-serif;
+		font-style: normal;
 		/* font-family: "Poppins", sans-serif; */
 		margin: 0;
 		padding: 0;
@@ -101,7 +103,6 @@ const { title } = Astro.props;
 		--white: #ffffff;
 
 		--p-font: 1rem;
-		--weight-font-list-navbar: 600;
 	}
 
 	/* HEADER */
@@ -113,15 +114,15 @@ const { title } = Astro.props;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		transition: 0.5s;
-		padding: 20px 10%;
+		transition: 0.3s;
+		padding: 20px 12%;
 		z-index: 10;
 	}
 
 	header.sticky {
 		background-color: var(--white);
-		padding: 15px 10%;
-		transition: padding 0.5s ease-in-out;
+		padding: 15px 12%;
+		transition: padding 0.3s ease-in-out;
 	}
 
 	header.sticky ul li a {
@@ -150,7 +151,7 @@ const { title } = Astro.props;
 		background: black;
 		height: 2px;
 		width: 100%;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		transform-origin: left;
 	}
 
@@ -180,78 +181,68 @@ const { title } = Astro.props;
 		margin: 0 15px;
 		color: var(--white);
 		letter-spacing: 1.5px;
-		font-weight: var(--weight-font-list-navbar);
-		transition: 0.5s;
+		font-weight: 400;
+		/* 	transition: 0.3s; */
 		font-size: var(--p-font);
-		/* 	text-transform: uppercase; */
+		text-transform: uppercase;
+		border-bottom: 4px solid transparent;
 	}
 
 	header ul li a:hover {
 		color: var(--primary-color);
+		border-bottom: 3px solid var(--primary-color);
 	}
 
-	.right__content {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 20px;
-	}
-
-	.right__content a {
-		padding: 8px 15px;
-		background-color: var(--primary-color);
-		color: var(--white);
-		font-weight: 600;
-		transition: all 0.5s ease-in-out;
-	}
-
-	.right__content a:hover {
-		background-color: var(--primary-color-dark);
-	}
-
-	.right__content .menu-btn {
+	.menu {
 		display: none;
 	}
 
 	@media (max-width: 1150px) {
-		.right__content .menu-btn {
+		.menu {
 			display: flex;
 			cursor: pointer;
+		}
+
+		header {
+			background-color: white;
 		}
 
 		header ul {
 			position: fixed;
 			display: block;
+			overflow-y: scroll;
 			width: 35%;
-			height: 100vh;
-			top: 80px;
+			height: calc(100vh - 65px);
+			top: 75px;
 			right: -100%;
 			padding: 40px 30px;
 			background-color: white;
 			transition:
-				top 0.5s ease-in-out,
-				right 0.5s ease-in-out;
+				top 0.3s ease-in-out,
+				right 0.3s ease-in-out;
+		}
+
+		header ul li {
+			padding: 10px 0;
 		}
 
 		header ul li a {
 			font-size: 1.5rem;
 			color: var(--text-dark);
-			padding: 10px 0;
 			text-decoration: none;
-			display: block;
 			transition: color 0.3s ease;
 		}
 
 		header.sticky ul {
-			top: 70px;
+			top: 65px;
 		}
 
 		header:not(.sticky) ul.open {
 			background-color: white;
 			transition:
-				top 0.5s ease-in-out,
-				right 0.5s ease-in-out;
-			top: 80px;
+				top 0.3s ease-in-out,
+				right 0.3s ease-in-out;
+			top: 75px;
 		}
 
 		header:not(.sticky) ul.open a {
@@ -278,7 +269,7 @@ const { title } = Astro.props;
 			padding: 20px 5%;
 		}
 
-		header.sticky{
+		header.sticky {
 			padding: 15px 5%;
 		}
 	}

@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section>
@@ -14,32 +15,73 @@
                 <img src="img/slider/3.avif" />
             </section>
         </div>
-        <div class="btn-left">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                ><path
-                    d="M8.3685 12L13.1162 3.03212L14.8838 3.9679L10.6315 12L14.8838 20.0321L13.1162 20.9679L8.3685 12Z"
-                ></path></svg
-            >
-        </div>
-        <div class="btn-right">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                ><path
-                    d="M15.6315 12L10.8838 3.03212L9.11622 3.9679L13.3685 12L9.11622 20.0321L10.8838 20.9679L15.6315 12Z"
-                ></path></svg
-            >
-        </div>
+        <div class="content">
+            <div class="btn-left">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m16 20l-8-8l8-8"></path></svg
+                >
+            </div>
 
-        <h1>IGLESIA CATOLICA AVANZADA</h1>
+            <div class="cuerpo">
+                <div class="texto">
+                    <span>Dona ahora</span>
+                    <h1>y Ayudanos a seguir con esta noble causa</h1>
+                    <p>
+                        Con tu ayuda serviremos a la iglesia necesitada en todo
+                        el mundo
+                    </p>
+                </div>
+                <div class="donar__btn">
+                    <button>
+                        <span>Donar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="btn-right">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m8 20 8-8-8-8"></path></svg
+                >
+            </div>
+        </div>
     </div>
 </section>
 
 <script is:inline>
+    // TAMAÑOS PARA EL SLIDER DINAMICO
+    const tamanoCarruseles = 300;
+    const tamanoSlider = 3;
+
+    document.documentElement.style.setProperty(
+        "--tamano-carruseles",
+        `${tamanoCarruseles}%`,
+    );
+    document.documentElement.style.setProperty(
+        "--tamano-slider",
+        tamanoSlider.toString(),
+    );
+
+    // FUNCIONALIDAD DEL SLIDER DINAMICO
     const btnLeft = document.querySelector(".btn-left"),
         btnRight = document.querySelector(".btn-right"),
         slider = document.querySelector("#slider"),
@@ -88,6 +130,11 @@
 </script>
 
 <style>
+    :root {
+        --tamano-carruseles: 0%;
+        --tamano-slider: 0;
+    }
+
     .container-carousel {
         position: relative;
         width: 100%;
@@ -96,13 +143,14 @@
     }
 
     .carruseles {
-        width: 300%;
+        width: var(--tamano-carruseles);
         height: 100%;
         display: flex;
     }
 
     .slider-section {
-        width: calc(100% / 3);
+        position: relative;
+        width: calc(100% / var(--tamano-slider));
         height: 100%;
     }
 
@@ -110,52 +158,161 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(40%);
+        /* filter: brightness(45%); */
+    }
+
+    .slider-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.3)
+        );
+        pointer-events: none;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        background-color: transparent;
+        transform: translate(0, -50%);
+        transition: 0.5s ease;
     }
 
     .btn-left,
     .btn-right {
         display: flex;
-        position: absolute;
-        top: 50%;
+        height: 80px;
         font-size: 1.5rem;
         background-color: transparent;
-        padding: 5px;
         font-weight: 600;
         cursor: pointer;
         color: #ffffff81;
-        transform: translate(0, -50%);
         transition: 0.5s ease;
-        user-select: none;
     }
 
-    .btn-left:hover,
-    .btn-right:hover {
+    .btn-left svg,
+    .btn-right svg {
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease;
+    }
+
+    .btn-left svg:hover,
+    .btn-right svg:hover {
         scale: 1.2;
         color: #fff;
     }
 
     .btn-left {
-        left: 10px;
+        margin-right: calc(12% - 65px);
     }
 
-    .btn-right {
-        right: 10px;
+    .cuerpo {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        padding-bottom: 100px;
+        background-color: transparent;
+        transition: 0.5s ease;
+        justify-content: flex-end;
     }
 
-    .btn-left,
-    .btn-right svg {
-        width: 100px;
+    .texto span {
+        color: #ff823ed8;
+        text-transform: uppercase;
+        font-size: clamp(1em, 4vw + 1rem, 3.5em);
+        font-weight: 900;
     }
 
     h1 {
-        position: absolute;
-        color: white;
-        top: 50%;
-        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        font-size: clamp(1em, 4vw + 1rem, 3.5em);
+        font-weight: 900;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: clamp(0.5em, 1vw + 1rem, 1.5em);
         left: 150px;
         padding: 5px;
-        font-weight: 600;
-        transform: translate(0, -50%);
+        font-weight: 400;
+    }
+
+    button {
+        display: inline-block;
+        border-radius: 3px;
+        background-color: var(--primary-color);
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        font-size: 20px;
+        padding: 8px;
+        width: 120px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    button span:after {
+        content: "»";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -15px;
+        transition: 0.5s;
+    }
+
+    button:hover {
+        background-color: var(--primary-color-dark);
+    }
+
+    button:hover span {
+        padding-right: 15px;
+    }
+
+    button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    @media (max-width: 1150px) {
+        .content {
+            padding-top: 75px;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .content {
+            padding-top: 75px;
+        }
+
+        .cuerpo {
+            padding: 0 5%;
+            padding-bottom: 100px;
+        }
+
+        .btn-left,
+        .btn-right {
+            display: none;
+        }
     }
 </style>

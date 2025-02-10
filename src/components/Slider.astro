@@ -231,20 +231,20 @@
     .texto span {
         color: #ff823ed8;
         text-transform: uppercase;
-        font-size: clamp(1em, 4vw + 1rem, 3.5em);
+        font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
         font-weight: 900;
     }
 
     h1 {
         color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
-        font-size: clamp(1em, 4vw + 1rem, 3.5em);
+        font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
         font-weight: 900;
     }
 
     p {
         color: rgba(255, 255, 255, 0.8);
-        font-size: clamp(0.5em, 1vw + 1rem, 1.5em);
+        font-size: clamp(1em, 4vw + 1rem, 1.3em);
         left: 150px;
         padding: 5px;
         font-weight: 400;
@@ -314,5 +314,21 @@
         .btn-right {
             display: none;
         }
+    }
+
+    @keyframes slideInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .cuerpo {
+        opacity: 0;
+        animation: slideInLeft 0.8s ease-out forwards;
     }
 </style>

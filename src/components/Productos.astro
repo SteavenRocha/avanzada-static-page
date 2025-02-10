@@ -1,21 +1,100 @@
-<section>
-    
-    <p>
-        PRODUCTOS
-    </p>
+---
+import "glider-js/glider.min.css";
+---
 
+<section>
+    <div class="container">
+        <div class="title">
+            <h1>NUESTROS PRODUCTOS</h1>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel__contenedor">
+                <button aria-label="Anterior" class="carousel__anterior">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        ><path
+                            d="M8.3685 12L13.1162 3.03212L14.8838 3.9679L10.6315 12L14.8838 20.0321L13.1162 20.9679L8.3685 12Z"
+                        ></path></svg
+                    >
+                </button>
+
+                <div class="carousel__lista">
+                    <div class="carousel__elemento">
+                        <img src="img/productos/1.jpg" alt="Producto 1" />
+                        <p>Producto 1</p>
+                    </div>
+                    <div class="carousel__elemento">
+                        <img src="img/productos/2.jpg" alt="Producto 2" />
+                        <p>Producto 2</p>
+                    </div>
+                    <div class="carousel__elemento">
+                        <img src="img/productos/3.jpg" alt="Producto 3" />
+                        <p>Producto 3</p>
+                    </div>
+                    <div class="carousel__elemento">
+                        <img src="img/productos/4.jpg" alt="Producto 4" />
+                        <p>Producto 4</p>
+                    </div>
+                    <div class="carousel__elemento">
+                        <img src="img/productos/5.jpg" alt="Producto 5" />
+                        <p>Producto 5</p>
+                    </div>
+                </div>
+
+                <button aria-label="Siguiente" class="carousel__siguiente">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        ><path
+                            d="M15.6315 12L10.8838 3.03212L9.11622 3.9679L13.3685 12L9.11622 20.0321L10.8838 20.9679L15.6315 12Z"
+                        ></path></svg
+                    >
+                </button>
+            </div>
+
+            <div role="tablist" class="carousel__indicadores"></div>
+        </div>
+    </div>
 </section>
+
+<script src="/public/glider-init.js" type="module"></script>
 
 <style>
     section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 500px;
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
     }
 
-    section p{
-        font-size: 2rem;
-        font-weight: 900;
+    .container {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 10%;
+        gap: 50px;
+        border: 1px solid blue;
+    }
+
+    .title {
+        text-align: center;
+        border: 1px solid green;
+    }
+
+    .title h1 {
+        text-transform: uppercase;
+        font-size: clamp(1.5em, 4vw + 1rem, 2.5em);
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .carousel {
+        width: 100%;
     }
 </style>

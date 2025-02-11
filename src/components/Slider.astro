@@ -14,6 +14,9 @@
             <section class="slider-section">
                 <img src="img/slider/3.avif" />
             </section>
+            <section class="slider-section">
+                <img src="img/slider/4.jpg" />
+            </section>
         </div>
         <div class="content">
             <div class="btn-left">
@@ -34,17 +37,43 @@
 
             <div class="cuerpo">
                 <div class="texto">
-                    <span>Dona ahora</span>
-                    <h1>y Ayudanos a seguir con esta noble causa</h1>
+                    <span class="primer__span">Dona</span><span class="titulo"> ahora</span>
+                    <h1 class="titulo">y Ayudanos a seguir con esta <span class="segundo__span">noble</span> causa</h1>
                     <p>
                         Con tu ayuda serviremos a la iglesia necesitada en todo
                         el mundo
                     </p>
                 </div>
-                <div class="donar__btn">
+                <div class="donar__section">
                     <button>
                         <span>Donar</span>
                     </button>
+                    <div class="info__donaciones">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="128"
+                            height="128"
+                            viewBox="0 0 20 20"
+                            ><g
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                ><path
+                                    d="M5 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                ></path><path
+                                    d="M3.854 8.896a.5.5 0 0 1 0 .708l-.338.337A3.47 3.47 0 0 0 2.5 12.394v1.856a.5.5 0 1 1-1 0v-1.856a4.47 4.47 0 0 1 1.309-3.16l.337-.338a.5.5 0 0 1 .708 0m11.792-.3a.5.5 0 0 0 0 .708l.338.337A3.47 3.47 0 0 1 17 12.094v2.156a.5.5 0 0 0 1 0v-2.156a4.47 4.47 0 0 0-1.309-3.16l-.337-.338a.5.5 0 0 0-.708 0"
+                                ></path><path
+                                    d="M14 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6m-4.5 3.25a2.5 2.5 0 0 0-2.5 2.5v1.3a.5.5 0 0 1-1 0v-1.3a3.5 3.5 0 0 1 7 0v1.3a.5.5 0 1 1-1 0v-1.3a2.5 2.5 0 0 0-2.5-2.5"
+                                ></path><path
+                                    d="M9.5 11.75a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                ></path></g
+                            ></svg
+                        >
+                        <div class="text__info__donaciones">
+                            <span>60,000</span>
+                            <span>Contribuyentes</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -69,8 +98,8 @@
 
 <script is:inline>
     // TAMAÑOS PARA EL SLIDER DINAMICO
-    const tamanoCarruseles = 300;
-    const tamanoSlider = 3;
+    const tamanoCarruseles = 400;
+    const tamanoSlider = 4;
 
     document.documentElement.style.setProperty(
         "--tamano-carruseles",
@@ -133,6 +162,8 @@
     :root {
         --tamano-carruseles: 0%;
         --tamano-slider: 0;
+
+        --color-galleta: #ff823ed8;
     }
 
     .container-carousel {
@@ -186,6 +217,10 @@
         background-color: transparent;
         transform: translate(0, -50%);
         transition: 0.5s ease;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
     }
 
     .btn-left,
@@ -222,20 +257,70 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        padding-bottom: 50px;
         background-color: transparent;
         transition: 0.5s ease;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: left;
     }
 
-    .texto span {
-        color: #ff823ed8;
+    .texto {
+        width: 70%;
+    }
+
+    .donar__section {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-top: 20px;
+        height: 80px;
+        gap: 10px;
+    }
+
+    .info__donaciones {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .info__donaciones svg {
+        width: 80px;
+        height: 80px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .text__info__donaciones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .text__info__donaciones span {
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        font-size: clamp(0.5em, 4vw + 1rem, 1em);
+        font-weight: 900;
+    }
+
+    .text__info__donaciones span:first-child {
+        font-size: clamp(1em, 4vw + 1rem, 2em);
+        color: var(--color-galleta);
+    }
+
+    .texto .primer__span {
+        color: var(--color-galleta);
         text-transform: uppercase;
         font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
         font-weight: 900;
     }
 
-    h1 {
+    .texto h1 span.segundo__span {
+        color: var(--color-galleta);
+    }
+
+    .titulo {
         color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
         font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
@@ -260,6 +345,7 @@
         font-size: 20px;
         padding: 8px;
         width: 120px;
+        height: 100%;
         transition: all 0.5s;
         cursor: pointer;
         margin: 5px;
@@ -303,6 +389,10 @@
     @media (max-width: 650px) {
         .content {
             padding-top: 75px;
+        }
+
+        .texto {
+            width: 100%;
         }
 
         .cuerpo {

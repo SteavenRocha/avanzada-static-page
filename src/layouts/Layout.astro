@@ -41,11 +41,12 @@ const { title } = Astro.props;
 			<nav>
 				<ul class="nav__links" id="nav-links">
 					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Noticias</a></li>
-					<li><a href="#">Galeria</a></li>
 					<li><a href="#">Productos</a></li>
+					<li><a href="#">Galería</a></li>
+					<li><a href="#">Talentos</a></li>
 					<li><a href="#">Beneficios</a></li>
-					<li><a href="#">Contáctanos</a></li>
+					<li><a href="#">Noticias</a></li>
+					<!-- <li><a href="#">Contáctanos</a></li> -->
 				</ul>
 			</nav>
 
@@ -96,11 +97,15 @@ const { title } = Astro.props;
 	}
 
 	:root {
+		/* COLORES PRINCIPALES */ 
 		--primary-color: #ff833e;
 		--primary-color-dark: #db6f35;
-		--text-dark: #333333;
-		--text-light: #767268;
-		--white: #ffffff;
+		--color-white: #f5f5f5;
+
+		/* COLORES DE LAS LETRAS*/
+        --color-text-dark: #2f2f2f;
+        --color-text-light: #727272;
+        --color-dark: #121212;
 
 		--p-font: 1rem;
 	}
@@ -115,18 +120,18 @@ const { title } = Astro.props;
 		justify-content: space-between;
 		align-items: center;
 		transition: 0.3s;
-		padding: 20px 12%;
+		padding: 20px 8%;
 		z-index: 10;
 	}
 
 	header.sticky {
-		background-color: var(--white);
-		padding: 15px 12%;
+		background-color: var(--color-white);
+		padding: 15px 8%;
 		transition: padding 0.3s ease-in-out;
 	}
 
 	header.sticky ul li a {
-		color: var(--text-dark);
+		color: var(--color-text-dark);
 	}
 
 	/* NAV */
@@ -179,7 +184,7 @@ const { title } = Astro.props;
 	header ul li a {
 		position: relative;
 		margin: 0 15px;
-		color: var(--white);
+		color: var(--color-white);
 		letter-spacing: 1.5px;
 		font-weight: 400;
 		/* 	transition: 0.3s; */
@@ -204,7 +209,12 @@ const { title } = Astro.props;
 		}
 
 		header {
-			background-color: white;
+			padding: 20px 5%;
+			background-color: var(--color-white);
+		}
+
+		header.sticky {
+			padding: 15px 5%;
 		}
 
 		header ul {
@@ -216,7 +226,7 @@ const { title } = Astro.props;
 			top: 75px;
 			right: -100%;
 			padding: 40px 30px;
-			background-color: white;
+			background-color: var(--color-white);
 			transition:
 				top 0.3s ease-in-out,
 				right 0.3s ease-in-out;
@@ -228,7 +238,7 @@ const { title } = Astro.props;
 
 		header ul li a {
 			font-size: 1.5rem;
-			color: var(--text-dark);
+			color: var(--color-text-dark);
 			text-decoration: none;
 			transition: color 0.3s ease;
 		}
@@ -238,7 +248,7 @@ const { title } = Astro.props;
 		}
 
 		header:not(.sticky) ul.open {
-			background-color: white;
+			background-color: var(--color-white);
 			transition:
 				top 0.3s ease-in-out,
 				right 0.3s ease-in-out;
@@ -246,7 +256,7 @@ const { title } = Astro.props;
 		}
 
 		header:not(.sticky) ul.open a {
-			color: var(--text-dark);
+			color: var(--color-text-dark);
 		}
 
 		header ul.open {
@@ -263,14 +273,6 @@ const { title } = Astro.props;
 	@media (max-width: 650px) {
 		header ul {
 			width: 60%;
-		}
-
-		header {
-			padding: 20px 5%;
-		}
-
-		header.sticky {
-			padding: 15px 5%;
 		}
 	}
 

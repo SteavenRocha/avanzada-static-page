@@ -160,8 +160,8 @@
 
 <style>
     :root {
-        --tamano-carruseles: 0%;
-        --tamano-slider: 0;
+        --tamano-carruseles;
+        --tamano-slider;
 
         --color-galleta: #ff823ed8;
     }
@@ -270,7 +270,6 @@
     .donar__section {
         display: flex;
         justify-content: left;
-        align-items: center;
         padding-top: 20px;
         height: 80px;
         gap: 10px;
@@ -331,7 +330,6 @@
         color: rgba(255, 255, 255, 0.8);
         font-size: clamp(1em, 4vw + 1rem, 1.3em);
         left: 150px;
-        padding: 5px;
         font-weight: 400;
     }
 
@@ -348,7 +346,6 @@
         height: 100%;
         transition: all 0.5s;
         cursor: pointer;
-        margin: 5px;
     }
 
     button span {
@@ -403,6 +400,16 @@
         .btn-left,
         .btn-right {
             display: none;
+        }
+
+        .donar__section {
+            flex-direction: column;
+            padding-top: 0;
+            gap: 0;
+        }
+
+        button {
+            order: 2;
         }
     }
 

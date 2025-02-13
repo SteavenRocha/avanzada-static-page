@@ -4,192 +4,235 @@
 
 <section>
     <div class="container">
-        <div class="content-left">
-            <div class="column">
-                <div class="icon">
-                    <img src="img/goal.png" alt="vision" />
-                </div>
+        <!-- contenido -->
+        <div class="mision">
+            <span class="mision__name"
+                >Misión
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        ><path d="M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0"
+                        ></path><path d="M7 12a5 5 0 1 0 10 0 5 5 0 1 0-10 0"
+                        ></path><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"
+                        ></path></g
+                    ></svg
+                >
+            </span>
+            <p class="mision__paragraph">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus deleniti iusto illo. Iure sapiente vitae dignissimos
+                tempore officia dicta ipsa molestiae facilis cumque voluptatem
+                quaerat, repudiandae ratione earum. Cumque, a! Sit officiis,
+                magni nihil quo placeat dolor doloribus est et, neque unde.
+            </p>
+        </div>
 
-                <div class="title">
-                    <h1>Misión</h1>
-                </div>
-            </div>
-
-            <div class="description">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Quidem aut dolore labore impedit necessitatibus suscipit.
-                    Esse optio dolorum magni cum officiis molestiae, saepe
-                    facere iure culpa mollitia? Ad, corporis a.
-                </p>
+        <div class="center__image">
+            <div class="center__img">
+                <img src="img/about/4.png" alt="Panaderia" />
             </div>
         </div>
 
-        <div class="content-right">
-            <div class="column">
-                <div class="icon">
-                    <img src="img/goal.png" alt="vision" />
-                </div>
-
-                <div class="title">
-                    <h1>Visión</h1>
-                </div>
-            </div>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat laudantium quis esse officiis officia minus fugiat,
-                    atque, temporibus optio illum doloremque vero, magni sit at
-                    odio distinctio explicabo fugit accusamus!
-                </p>
-            </div>
+        <div class="vision">
+            <span class="vision__name"
+                >Visión
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="currentColor"
+                        d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
+                    ></path></svg
+                >
+            </span>
+            <p class="vision__paragraph">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus deleniti iusto illo. Iure sapiente vitae dignissimos
+                tempore officia dicta ipsa molestiae facilis cumque voluptatem
+                quaerat, repudiandae ratione earum. Cumque, a! Sit officiis,
+                magni nihil quo placeat dolor doloribus est et, neque unde.
+            </p>
         </div>
     </div>
 </section>
 
 <style>
     section {
-        position: relative;
-        box-sizing: border-box;
+        background-color: var(--color-white);
+        padding: 0 8%;
         height: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
 
     .container {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
         display: flex;
-        justify-content: center;
-        gap: 60px;
-        height: 100%;
-        padding: 60px 10%;
-        background-color: #e6d0c3;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 7rem;
+        gap: 2.56rem;
     }
 
-    .content-left,
-    .content-right {
-        flex: 1;
+    .mision,
+    .vision {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         position: relative;
-        gap: 30px;
-    }
-
-    .column {
-        display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        gap: 30px;
-    }
-
-    .title {
-        text-align: center;
-        width: 180px;
-        overflow: hidden;
-    }
-
-    .title h1 {
-        text-transform: uppercase;
-        font-size: clamp(1.5em, 4vw + 1rem, 2.5em);
-        color: var(--primary-color);
-        font-weight: bold;
-    }
-
-    .description p {
-        font-weight: 400;
-        font-size: clamp(0.875em, 3vw + 1rem, 1.125em);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 10;
-        -webkit-box-orient: vertical;
-    }
-
-    .icon {
-        width: 100px;
-        height: 100px;
-    }
-
-    .icon img {
+        align-items: start;
         width: 100%;
     }
 
-    @media (max-width: 1150px) {
+    .center__image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .center__img {
+        position: relative;
+        width: 100%;
+        min-width: 360px;
+        max-width: 360px;
+        height: 460px;
+        border-radius: 20%;
+        overflow: hidden;
+    }
+
+    .center__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 600ms;
+    }
+
+    .mision__name,
+    .vision__name {
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
+        font-weight: 400;
+        font-size: clamp(0.875em, 4vw + 1rem, 1em);
+        margin-bottom: 11px;
+        position: relative;
+        /*        align-self: center; */
+        text-transform: uppercase;
+        color: var(--color-text-dark);
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--color-text-dark);
+    }
+
+    .mision__paragraph,
+    .vision__paragraph {
+        font-weight: 400;
+        font-size: clamp(0.875em, 4vw + 1rem, 1.215em);
+        color: var(--color-text-light);
+    }
+
+    .mision__name svg,
+    .vision__name svg {
+        width: 1em;
+        height: 1em;
+    }
+
+    @media screen and (max-width: 1150px) {
         section {
-            height: auto;
-        }
-
-        .description {
-            padding: 20px 0 20px 20px;
-        }
-
-        .column {
-            gap: 10px;
+            padding: 0rem 5%;
         }
 
         .container {
-            display: block;
-            padding: 30px 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.56rem;
         }
 
-        .content-left {
-            padding-bottom: 50px;
+        .mision {
+            grid-column: 1/3;
+            grid-row: 1/2;
         }
 
-        .content-left,
-        .content-right {
-            flex-direction: row;
+        .vision {
+            grid-column: 1/3;
+            grid-row: 2/3;
         }
 
-        .icon {
+        .center__image {
+            grid-column: 3/4;
+            grid-row: 1/3;
+
+            width: 100%;
+        }
+
+        .center__img {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            max-height: 350px;
+            max-width: 400px;
         }
 
-        .icon img {
-            width: 80%;
+        .center__img img {
+            width: auto;
+        }
+
+        .center__image {
+            order: 3;
         }
     }
 
-    @media (max-width: 800px) {
-        .column {
+    @media screen and (max-width: 870px) {
+
+        .container {
+            display: flex;
             flex-direction: column;
         }
+    }
 
-        .icon {
+    @media screen and (max-width: 595px) {
+        .container {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
         }
-    }
 
-    @media (max-width: 650px) {
-        .container {
-            padding: 50px 5%;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .content-left,
-        .content-right {
-            flex-direction: column;
-            justify-content: space-between;
+        .mision {
+            text-align: center;
+            align-items: center;
+            order: 1;
         }
 
-        .container {
-            display: block;
-            padding: 50px 5%;
+        .vision {
+            text-align: center;
+            align-items: center;
+            order: 3;
         }
 
-        .column {
-            flex-direction: row;
+        .center__image {
+            order: 2;
         }
 
-        .description {
-            padding: 0;
+        .center__img {
+            display: flex;
+            justify-content: center;
+            max-height: 300px;
+            max-width: 360px;
         }
 
-        .title {
-            width: 140px;
+        .center__img img {
+            width: auto;
         }
     }
 </style>

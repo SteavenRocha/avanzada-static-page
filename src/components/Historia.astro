@@ -1,5 +1,5 @@
 ---
-
+import Boton from "../components/Boton.astro";
 ---
 
 <section>
@@ -7,7 +7,7 @@
         <!-- imagenes -->
         <div class="about__images">
             <div class="about__img">
-                <img src="img/about/1.avif" alt="Panaderia" />
+                <img src="img/about/3.avif" alt="Panaderia" />
             </div>
             <div class="about__img">
                 <!--  <img src="img/about/2.avif" alt="Panaderia" /> -->
@@ -44,30 +44,28 @@
                 quaerat, repudiandae ratione earum. Cumque, a! Sit officiis,
                 magni nihil quo placeat dolor doloribus est et, neque unde.
             </p>
-            <a href="#" class="boton">
-                <span>Ver más</span>
-            </a>
+            <Boton />
         </div>
-    </div>
 
-    <!-- Modal -->
-    <div id="videoModal" class="modal">
-        <span class="close">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                ><path
-                    d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
-                ></path></svg
-            >
-        </span>
-        <video
-            id="modalVideo"
-            src="videos/video-presentacion.mp4"
-            controls
-            muted
-            autoplay></video>
+        <!-- Modal -->
+        <div id="videoModal" class="modal">
+            <span class="close">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                        d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+                    ></path></svg
+                >
+            </span>
+            <video
+                id="modalVideo"
+                src="videos/video-presentacion.mp4"
+                controls
+                muted
+                autoplay></video>
+        </div>
     </div>
 </section>
 
@@ -115,7 +113,7 @@
 <style>
     section {
         background-color: var(--color-white);
-        padding: 5rem 8%;
+        padding: 7rem 8%;
         height: auto;
         overflow: hidden;
         display: flex;
@@ -128,21 +126,22 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2.56rem;
+        gap: 1.56rem;
     }
 
     .about__images {
         display: flex;
-        justify-content: stretch;
-        width: 100%;
-        gap: 1.56rem;
+        justify-content: left;
+        gap: 1rem;
     }
 
     .about__img {
         position: relative;
+        border-radius: 20px;
         width: 100%;
-        min-width: 285px;
-        height: auto;
+        min-width: 250px;
+        max-width: 550px;
+        height: 460px;
         overflow: hidden;
     }
 
@@ -202,25 +201,28 @@
 
     .about__name {
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: clamp(0.875em, 4vw + 1rem, 1em);
         margin-bottom: 11px;
         position: relative;
+ /*        align-self: center; */
         text-transform: uppercase;
         color: var(--color-text-dark);
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--color-text-dark);
     }
 
-    .about__name::after {
+    /*  .about__name::after {
         content: "";
         position: absolute;
-        top: 8.5px;
-        right: -62px;
-        width: 48px;
+        top: 30px;
+        left: 4px;
+        width: 130px;
         height: 2px;
         background-color: var(--color-text-dark);
-    }
+    } */
 
     .about__title {
-        font-size: 2.25rem;
+        font-size: clamp(2.25em, 4vw + 1rem, 2.5em);
         font-weight: 700;
         margin-bottom: 18px;
         text-transform: uppercase;
@@ -228,7 +230,7 @@
     }
 
     .about__subtitle {
-        font-size: 1.215rem;
+        font-size: clamp(1.215em, 4vw + 1rem, 1.315em);
         font-weight: 400;
         color: var(--color-text-dark);
         margin-bottom: 28px;
@@ -236,55 +238,9 @@
 
     .about__paragraph {
         font-weight: 400;
+        font-size: clamp(0.875em, 4vw + 1rem, 1.215em);
         color: var(--color-text-light);
-        margin-bottom: 45px;
-    }
-
-    .boton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-white);
-        border: 2px solid var(--color-dark);
-        color: var(--color-dark);
-        text-align: center;
-        font-size: 20px;
-        padding: 8px;
-        width: 120px;
-        height: 50px;
-        cursor: pointer;
-        text-decoration: none;
-        line-height: 40px; 
-    }
-
-    .boton span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
-
-    .boton span:after {
-        content: "»";
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -15px;
-        transition: 0.5s;
-    }
-
-    .boton:hover {
-        color: var(--color-white);
-        background-color: var(--color-dark);
-    }
-
-    .boton:hover span {
-        padding-right: 15px;
-    }
-
-    .boton:hover span:after {
-        opacity: 1;
-        right: 0;
+        margin-bottom: 35px;
     }
 
     @media screen and (max-width: 1150px) {
@@ -298,12 +254,14 @@
 
         .about__images {
             flex-direction: column;
+            width: 100%;
             gap: 1rem;
         }
 
         .about__img {
-            height: 270px;
+            height: 280px;
             width: 100%;
+            max-width: 100%;
         }
 
         .about__img:last-child {
@@ -315,7 +273,11 @@
         }
     }
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 595px) {
+        section {
+            padding: 5rem 5%;
+        }
+
         .container {
             flex-direction: column-reverse;
             justify-content: center;
@@ -326,19 +288,11 @@
             align-items: center;
         }
 
-        .about__name {
-            text-align: 1.5rem;
-        }
-
-        .about__name::after {
+        /*  .about__name::after {
             top: 30px;
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        .about__paragraph {
-            margin-bottom: 1.56rem;
-        }
+        } */
     }
 
     /* Estilos de la Modal */

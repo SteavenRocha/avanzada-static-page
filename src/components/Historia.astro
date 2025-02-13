@@ -4,10 +4,43 @@ import Boton from "../components/Boton.astro";
 
 <section>
     <div class="container">
+        <!-- contenido -->
+        <div class="about__content">
+            <span class="about__name"
+                >Nuestra historia
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 512 512"
+                    ><path
+                        fill="currentColor"
+                        d="M202.24 74C166.11 56.75 115.61 48.3 48 48a31.36 31.36 0 0 0-17.92 5.33A32 32 0 0 0 16 79.9V366c0 19.34 13.76 33.93 32 33.93 71.07 0 142.36 6.64 185.06 47a4.11 4.11 0 0 0 6.94-3V106.82a15.9 15.9 0 0 0-5.46-12A143 143 0 0 0 202.24 74m279.68-20.7A31.33 31.33 0 0 0 464 48c-67.61.3-118.11 8.71-154.24 26a143.3 143.3 0 0 0-32.31 20.78 15.93 15.93 0 0 0-5.45 12v337.13a3.93 3.93 0 0 0 6.68 2.81c25.67-25.5 70.72-46.82 185.36-46.81a32 32 0 0 0 32-32v-288a32 32 0 0 0-14.12-26.61"
+                    ></path></svg
+                >
+            </span>
+            <h2 class="about__title">Panaderia avanzada</h2>
+            <h3 class="about__subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
+                possimus voluptatum ad.
+            </h3>
+            <p class="about__paragraph">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus deleniti iusto illo. Iure sapiente vitae dignissimos
+                tempore officia dicta ipsa molestiae facilis cumque voluptatem
+                quaerat, repudiandae ratione earum. Cumque, a! Sit officiis,
+                magni nihil quo placeat dolor doloribus est et, neque unde.
+            </p>
+            <Boton />
+        </div>
+
         <!-- imagenes -->
         <div class="about__images">
             <div class="about__img">
-                <img src="img/about/3.avif" alt="Panaderia" />
+                <img
+                    src="img/about/1.jpg"
+                    alt="Fundador de la panaderia Avanzada"
+                />
             </div>
             <div class="about__img">
                 <!--  <img src="img/about/2.avif" alt="Panaderia" /> -->
@@ -27,24 +60,6 @@ import Boton from "../components/Boton.astro";
                     >
                 </div>
             </div>
-        </div>
-
-        <!-- contenido -->
-        <div class="about__content">
-            <span class="about__name">Nuestra historia</span>
-            <h2 class="about__title">Panaderia avanzada</h2>
-            <h3 class="about__subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                possimus voluptatum ad.
-            </h3>
-            <p class="about__paragraph">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus deleniti iusto illo. Iure sapiente vitae dignissimos
-                tempore officia dicta ipsa molestiae facilis cumque voluptatem
-                quaerat, repudiandae ratione earum. Cumque, a! Sit officiis,
-                magni nihil quo placeat dolor doloribus est et, neque unde.
-            </p>
-            <Boton />
         </div>
 
         <!-- Modal -->
@@ -112,8 +127,10 @@ import Boton from "../components/Boton.astro";
 
 <style>
     section {
-        background-color: var(--color-white);
-        padding: 7rem 8%;
+        /* background-color: var(--color-white); */
+        padding: 0 8%;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
         height: auto;
         overflow: hidden;
         display: flex;
@@ -129,19 +146,30 @@ import Boton from "../components/Boton.astro";
         gap: 1.56rem;
     }
 
+    .about__content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 50%;
+    }
+
     .about__images {
         display: flex;
         justify-content: left;
-        gap: 1rem;
+        width: 50%;
+        overflow: hidden;
+        border-radius: 5px;
+        gap: 0.1rem;
+        -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
     }
 
     .about__img {
         position: relative;
-        border-radius: 20px;
-        width: 100%;
-        min-width: 250px;
-        max-width: 550px;
-        height: 460px;
+        width: 50%;
+        min-height: 450px;
+        max-height: 650px;
         overflow: hidden;
     }
 
@@ -180,10 +208,13 @@ import Boton from "../components/Boton.astro";
     }
 
     .about__img:hover img {
-        transform: scale(1.2);
+        transform: scale(1.02);
     }
 
-    .about__img:hover video,
+    .about__img:hover video {
+        transform: scale(1.02);
+    }
+
     .about__img:hover .btn__play svg {
         transform: scale(1.2);
     }
@@ -192,23 +223,24 @@ import Boton from "../components/Boton.astro";
         margin-top: 104px;
     } */
 
-    .about__content {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        width: 100%;
-    }
-
     .about__name {
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
         font-weight: 400;
         font-size: clamp(0.875em, 4vw + 1rem, 1em);
         margin-bottom: 11px;
         position: relative;
- /*        align-self: center; */
+        /*        align-self: center; */
         text-transform: uppercase;
         color: var(--color-text-dark);
         padding-bottom: 5px;
         border-bottom: 2px solid var(--color-text-dark);
+    }
+
+    .about__name svg {
+        width: 1em;
+        height: 1em;
     }
 
     /*  .about__name::after {
@@ -245,7 +277,9 @@ import Boton from "../components/Boton.astro";
 
     @media screen and (max-width: 1150px) {
         section {
-            padding: 5rem 5%;
+            padding: 0 5%;
+            padding-top: 5rem;
+            padding-bottom: 3rem;
         }
 
         .container {
@@ -254,38 +288,40 @@ import Boton from "../components/Boton.astro";
 
         .about__images {
             flex-direction: column;
-            width: 100%;
-            gap: 1rem;
         }
 
         .about__img {
-            height: 280px;
             width: 100%;
-            max-width: 100%;
+            min-height: 280px;
+            max-height: 280px;
         }
 
-        .about__img:last-child {
-            margin-top: 0;
+        .about__img img {
+            min-height: 280px;
+            max-height: auto;
         }
 
-        .about__img:nth-child(2) {
-            order: -1;
+        .about__img video {
+            min-height: 280px;
         }
     }
 
     @media screen and (max-width: 595px) {
-        section {
-            padding: 5rem 5%;
-        }
-
         .container {
             flex-direction: column-reverse;
             justify-content: center;
+            gap: 2.56rem;
         }
 
         .about__content {
+            order: 1;
+            width: 100%;
             text-align: center;
             align-items: center;
+        }
+
+        .about__images {
+            width: 100%;
         }
 
         /*  .about__name::after {

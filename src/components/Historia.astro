@@ -35,15 +35,13 @@ import Boton from "../components/Boton.astro";
         </div>
 
         <!-- imagenes -->
-        <div class="about__images">
-            <div class="about__img">
-                <img
-                    src="img/about/1.jpg"
-                    alt="Fundador de la panaderia Avanzada"
-                />
-            </div>
-            <div class="about__img">
-                <!--  <img src="img/about/2.avif" alt="Panaderia" /> -->
+        <div class="about__img">
+            <img
+                src="img/about/4.png"
+                alt="Fundador de la panaderia Avanzada"
+            />
+        </div>
+        <!--  <div class="about__video">
                 <video
                     id="videoTrigger"
                     src="videos/video-presentacion.mp4"
@@ -59,9 +57,7 @@ import Boton from "../components/Boton.astro";
                         ></path></svg
                     >
                 </div>
-            </div>
-        </div>
-
+            </div> -->
         <!-- Modal -->
         <div id="videoModal" class="modal">
             <span class="close">
@@ -143,44 +139,33 @@ import Boton from "../components/Boton.astro";
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1.56rem;
+        gap: 2.56rem;
     }
 
     .about__content {
         display: flex;
         flex-direction: column;
         align-items: start;
-        width: 50%;
-    }
-
-    .about__images {
-        display: flex;
-        justify-content: left;
-        width: 50%;
-        overflow: hidden;
-        border-radius: 5px;
-        gap: 0.1rem;
-        -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+        width: 68%;
     }
 
     .about__img {
-        position: relative;
-        width: 50%;
-        min-height: 450px;
-        max-height: 650px;
+        display: flex;
+        width: 32%;
+        min-height: 412px;
+        max-height: 468px;
+        /* min-height: 400px;
+        max-height: 500px; */
         overflow: hidden;
     }
 
     .about__img img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         transition: all 600ms;
     }
 
-    .about__img video {
+    .about__video video {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -211,11 +196,11 @@ import Boton from "../components/Boton.astro";
         transform: scale(1.02);
     }
 
-    .about__img:hover video {
+    .about__video:hover video {
         transform: scale(1.02);
     }
 
-    .about__img:hover .btn__play svg {
+    .about__video:hover .btn__play svg {
         transform: scale(1.2);
     }
 
@@ -283,34 +268,33 @@ import Boton from "../components/Boton.astro";
         }
 
         .container {
-            gap: 1.56rem;
+            gap: .56rem;
         }
 
-        .about__images {
-            flex-direction: column;
+        .about__content {
+            width: 60%;
         }
 
         .about__img {
-            width: 100%;
-            min-height: 280px;
-            max-height: 280px;
-        }
-
-        .about__img img {
-            min-height: 280px;
-            max-height: auto;
-        }
-
-        .about__img video {
-            min-height: 280px;
+            width: 40%;
         }
     }
 
-    @media screen and (max-width: 595px) {
+    @media screen and (max-width: 900px) {
+        .about__content {
+            width: 50%;
+        }
+
+        .about__img {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
         .container {
             flex-direction: column-reverse;
             justify-content: center;
-            gap: 2.56rem;
+            gap: 1.56rem;
         }
 
         .about__content {
@@ -320,8 +304,10 @@ import Boton from "../components/Boton.astro";
             align-items: center;
         }
 
-        .about__images {
+        .about__img {
             width: 100%;
+            min-height: 312px;
+            max-height: 350px;
         }
 
         /*  .about__name::after {

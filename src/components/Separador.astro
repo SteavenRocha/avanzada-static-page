@@ -1,0 +1,35 @@
+<div class="separator-dots">
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+</div>
+
+<style>
+    .separator-dots {
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .separator-dots .line {
+        height: 2px;
+        width: 7%;
+        background: #444;
+    }
+
+    .separator-dots .dot {
+        width: 12px;
+        height: 12px;
+        background: #444;
+        transform: rotate(45deg);
+    }
+
+    @media screen and (max-width: 595px) {
+        .separator-dots .line {
+            width: 10%;
+        }
+    }
+</style>

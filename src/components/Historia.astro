@@ -1,10 +1,9 @@
----
+<!-- ---
 import Boton from "../components/Boton.astro";
 ---
 
 <section>
     <div class="container">
-        <!-- contenido -->
         <div class="about__content">
             <span class="about__name"
                 >Nuestra historia
@@ -34,48 +33,11 @@ import Boton from "../components/Boton.astro";
             <Boton />
         </div>
 
-        <!-- imagenes -->
         <div class="about__img">
             <img
                 src="img/about/4.png"
                 alt="Fundador de la panaderia Avanzada"
             />
-        </div>
-        <!--  <div class="about__video">
-                <video
-                    id="videoTrigger"
-                    src="videos/video-presentacion.mp4"
-                    muted></video>
-
-                <div class="btn__play">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        ><path
-                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM10.6219 8.41459L15.5008 11.6672C15.6846 11.7897 15.7343 12.0381 15.6117 12.2219C15.5824 12.2658 15.5447 12.3035 15.5008 12.3328L10.6219 15.5854C10.4381 15.708 10.1897 15.6583 10.0672 15.4745C10.0234 15.4088 10 15.3316 10 15.2526V8.74741C10 8.52649 10.1791 8.34741 10.4 8.34741C10.479 8.34741 10.5562 8.37078 10.6219 8.41459Z"
-                        ></path></svg
-                    >
-                </div>
-            </div> -->
-        <!-- Modal -->
-        <div id="videoModal" class="modal">
-            <span class="close">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    ><path
-                        d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
-                    ></path></svg
-                >
-            </span>
-            <video
-                id="modalVideo"
-                src="videos/video-presentacion.mp4"
-                controls
-                muted
-                autoplay></video>
         </div>
     </div>
 </section>
@@ -165,43 +127,8 @@ import Boton from "../components/Boton.astro";
         transition: all 600ms;
     }
 
-    .about__video video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 600ms;
-        cursor: pointer;
-    }
-
-    .btn__play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background-color: transparent;
-        color: #dbdbdbe5;
-        transition: 0.5s ease;
-        user-select: none;
-        padding: 5px;
-        font-size: 2rem;
-        cursor: pointer;
-        transform: translate(-50%, -50%);
-    }
-
-    .btn__play svg {
-        width: 125px;
-        transition: all 600ms;
-    }
-
     .about__img:hover img {
         transform: scale(1.02);
-    }
-
-    .about__video:hover video {
-        transform: scale(1.02);
-    }
-
-    .about__video:hover .btn__play svg {
-        transform: scale(1.2);
     }
 
     /*     .about__img:last-child {
@@ -268,7 +195,7 @@ import Boton from "../components/Boton.astro";
         }
 
         .container {
-            gap: .56rem;
+            gap: 1.56rem;
         }
 
         .about__content {
@@ -294,14 +221,12 @@ import Boton from "../components/Boton.astro";
         .container {
             flex-direction: column-reverse;
             justify-content: center;
-            gap: 1.56rem;
+            gap: 2.56rem;
         }
 
         .about__content {
             order: 1;
             width: 100%;
-            text-align: center;
-            align-items: center;
         }
 
         .about__img {
@@ -309,88 +234,35 @@ import Boton from "../components/Boton.astro";
             min-height: 312px;
             max-height: 350px;
         }
-
-        /*  .about__name::after {
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-        } */
     }
 
-    /* Estilos de la Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.664);
-        align-items: center;
-        justify-content: center;
-        animation: fadeIn 0.3s ease-in-out;
+    @media screen and (max-width: 595px) {
+        .about__content {
+            text-align: center;
+            align-items: center;
+        }
     }
+</style> -->
 
-    .modal.closing {
-        animation: fadeOut 0.3s ease-in-out;
-    }
+<section>
+    
+    <p>
+        HISTORIA
+    </p>
 
-    .modal video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 800px;
-        object-fit: cover;
-        border: 1px solid var(--primary-color);
-    }
+</section>
 
-    .close {
-        position: absolute;
+<style>
+    section {
         display: flex;
         align-items: center;
         justify-content: center;
-        top: 10px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 50px;
-        cursor: pointer;
-        color: rgb(255, 255, 255);
+        height: 500px;
+        border: 1px solid red;
     }
 
-    .close svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    .close:hover {
-        background-color: rgba(0, 0, 0, 0.397);
-    }
-
-    @media (max-width: 900px) {
-        .modal video {
-            width: 90%;
-        }
-    }
-
-    /* Animación para el modal */
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
+    section p{
+        font-size: 2rem;
+        font-weight: 900;
     }
 </style>

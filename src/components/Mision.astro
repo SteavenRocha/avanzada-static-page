@@ -2,14 +2,16 @@
 
 ---
 
-<section>
+<!-- <section>
     <div class="container">
-        <!-- contenido -->
-        <div class="image">
-            <img src="img/about/2.png" alt="Panaderia" />
-        </div>
+        <div class="container__mision">
+            <div class="mision__image">
+                <img
+                    src="img/about/2.png"
+                    alt="Equipo de la panaderia Avanzada"
+                />
+            </div>
 
-        <div class="content">
             <div class="mision">
                 <span class="mision__name"
                     >Misión
@@ -42,6 +44,15 @@
                     doloribus est et, neque unde.
                 </p>
             </div>
+        </div>
+
+        <div class="container__vision">
+            <div class="vision__image">
+                <img
+                    src="img/about/2.png"
+                    alt="Equipo de la panaderia Avanzada"
+                />
+            </div>
 
             <div class="vision">
                 <span class="vision__name"
@@ -68,12 +79,28 @@
             </div>
         </div>
     </div>
+    <div id="videoModal" class="modal">
+        <span class="close">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                    d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+                ></path></svg
+            >
+        </span>
+        <video
+            id="modalVideo"
+            src="videos/video-presentacion.mp4"
+            controls
+            muted
+            autoplay></video>
+    </div>
 </section>
 
 <style>
     section {
-        /* background-color: var(--color-white); */
-        padding: 0 8%;
         height: auto;
         overflow: hidden;
         display: flex;
@@ -85,37 +112,19 @@
         margin: 0 auto;
         height: auto;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 5rem;
         gap: 1.56rem;
     }
 
-    .image {
+    .container__mision, .container__vision {
         display: flex;
-        justify-content: center;
-        position: relative;
-        width: 50%;
-        overflow: hidden;
-    }
-
-    .image img {
-        width: 100.1%;
+        width: 100%;
         height: 100%;
-        max-height: 530px;
-        object-fit: cover;
-        transition: all 600ms;
-    }
-
-    .image:hover img {
-        transform: scale(1.02);
-    }
-
-    .content {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 1.56rem;
+        overflow: hidden;
+        gap: 2.56rem;
     }
 
     .mision,
@@ -125,7 +134,76 @@
         position: relative;
         justify-content: center;
         align-items: start;
+        width: 50%;
+    }
+
+    .mision__image {
+        background-color: rgba(255, 115, 0, 0.24);
+        padding: 5% 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .mision__image img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 600ms;
+        border-radius: 10px;
+    }
+
+    .mision__image:hover img {
+        transform: scale(1.02);
+    }
+
+    .about__video {
+        position: relative;
+        display: flex;
+        border-radius: 5px;
+        width: 50%;
+        height: 100%;
+        /* min-height: 400px;
+        max-height: 500px; */
+        overflow: hidden;
+    }
+
+    .about__video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 600ms;
+        cursor: pointer;
+    }
+
+    .btn__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: transparent;
+        color: #dbdbdbe5;
+        transition: 0.5s ease;
+        user-select: none;
+        padding: 5px;
+        font-size: 2rem;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn__play svg {
+        width: 125px;
+        transition: all 600ms;
+    }
+
+    .about__video:hover video {
+        transform: scale(1.02);
+    }
+
+    .about__video:hover .btn__play svg {
+        transform: scale(1.2);
     }
 
     .mision__content,
@@ -193,7 +271,8 @@
             order: 3;
         }
 
-        .image, .content {
+        .image,
+        .content {
             width: 100%;
         }
 
@@ -206,7 +285,7 @@
         .container {
             padding-bottom: 3rem;
         }
-        
+
         .mision {
             text-align: center;
             align-items: center;
@@ -216,5 +295,105 @@
             text-align: center;
             align-items: center;
         }
+    }
+
+    /* Estilos de la Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.664);
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal.closing {
+        animation: fadeOut 0.3s ease-in-out;
+    }
+
+    .modal video {
+        position: absolute;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        object-fit: cover;
+    }
+
+    .close {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 10px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+
+    .close svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .close:hover {
+        background-color: rgba(0, 0, 0, 0.397);
+    }
+
+    @media (max-width: 900px) {
+        .modal video {
+            width: 90%;
+        }
+    }
+
+    /* Animación para el modal */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style> -->
+
+<section>
+    
+    <p>
+        MISION / VISION
+    </p>
+
+</section>
+
+<style>
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        border: 1px solid green;
+    }
+
+    section p{
+        font-size: 2rem;
+        font-weight: 900;
     }
 </style>

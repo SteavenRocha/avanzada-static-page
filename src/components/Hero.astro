@@ -1,0 +1,289 @@
+---
+import Boton from "../components/Boton.astro";
+---
+
+<section>
+    <div class="row">
+        <h1>Tus Donaciones <span>Cambian</span> Vidas</h1>
+
+        <p>
+            Ayúdanos a empoderar a jóvenes con nuestro programa de
+            capacitación. Tu aporte les brinda habilidades, confianza y un
+            camino hacia la independencia.
+        </p>
+
+        <div class="botones">
+            <Boton
+                text="Donar"
+                width="150px"
+                height="50px"
+                fontWeight="700"
+                fontSize="1.25rem"
+            />
+            <Boton
+                text="Leer Más"
+                width="150px"
+                height="50px"
+                bgColor="var(--color-white)"
+                hoverColor="var(--color-white-hover)"
+                fontWeight="700"
+                fontSize="clamp(0.5em, 4vw + 1rem, 1.2em)"
+                ;
+            />
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="box">
+            <div class="icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                        d="M12 22C6.4771 22 2 17.5228 2 12 2 6.4771 6.4771 2 12 2c5.5228 0 10 4.4771 10 10 0 5.5228-4.4772 10-10 10Zm0-2c4.4183 0 8-3.5817 8-8s-3.5817-8-8-8-8 3.5817-8 8 3.5817 8 8 8Zm-5-8h2c0 1.6569 1.3431 3 3 3s3-1.3431 3-3h2c0 2.7614-2.2386 5-5 5s-5-2.2386-5-5Z"
+                    ></path></svg
+                >
+            </div>
+
+            <div class="texts">
+                <h1>+1,500</h1>
+
+                <h2>Jovenes impactados</h2>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                        d="M12 22C6.4771 22 2 17.5228 2 12 2 6.4771 6.4771 2 12 2c5.5228 0 10 4.4771 10 10 0 5.5228-4.4772 10-10 10Zm0-2c4.4183 0 8-3.5817 8-8s-3.5817-8-8-8-8 3.5817-8 8 3.5817 8 8 8Zm1-8h4v2h-6V7h2v5Z"
+                    ></path></svg
+                >
+            </div>
+
+            <div class="texts">
+                <h1>+500</h1>
+
+                <h2>Horas de voluntariado</h2>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                        d="M22.1034 19 12.8659 3.0002a.9996.9996 0 0 0-.366-.366c-.4783-.2762-1.0899-.1123-1.366.366L1.8964 19H1v2h22v-2h-.8966Zm-14.5035.0002H4.2057l7.7942-13.5 7.7942 13.5h-3.394L12 11l-4.4 8.0002ZM12 15.1501 14.1175 19h-4.235L12 15.1501Z"
+                    ></path></svg
+                >
+            </div>
+
+            <div class="texts">
+                <h1>+300</h1>
+
+                <h2>Proyectos completados</h2>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                        d="M4 11.3333 0 9l12-7 12 7v8.5h-2v-7.3333l-2 1.1666v6.678l-.2226.2751C17.9457 20.5499 15.1418 22 12 22s-5.9457-1.4501-7.7774-3.7136L4 18.0113v-6.678ZM6 12.5v4.7917C7.4672 18.954 9.6111 20 12 20s4.5328-1.046 6-2.7083V12.5L12 16l-6-3.5ZM3.9693 9 12 13.6846 20.0307 9 12 4.3154 3.9693 9Z"
+                    ></path></svg
+                >
+            </div>
+
+            <div class="texts">
+                <h1>100%</h1>
+
+                <h2>Compromiso con el futuro</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script></script>
+
+<style>
+    section {
+        padding: 30px 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        overflow: hidden;
+        height: 100vh;
+        gap: 20px;
+        background-image: url("/public/img/hero-img.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 1;
+    }
+
+    section > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .row h1 {
+        font-size: clamp(2.8em, 4vw + 1rem, 4em);
+        text-align: center;
+        color: var(--color-white);
+    }
+
+    .row span {
+        color: var(--primary-color);
+    }
+
+    .row p {
+        font-size: clamp(0.5em, 4vw + 1rem, 1.5em);
+        text-align: center;
+        width: 70%;
+        color: var(--color-white);
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 100%;
+        background-color: rgba(226, 226, 226, 0.144);
+        border-radius: 15px;
+    }
+
+    .box .icon {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .box svg {
+        color: var(--primary-color);
+        width: 100%;
+        height: 100%;
+    }
+
+    .box .texts {
+        text-align: center;
+    }
+
+    .box h1 {
+        font-size: clamp(0.5em, 4vw + 1rem, 1.5em);
+        color: var(--primary-color);
+    }
+
+    .box h2 {
+        max-width: 200px;
+        word-wrap: break-word;
+        font-size: clamp(0.2em, 4vw + 1rem, 1.3em);
+        color: var(--color-white);
+    }
+
+    @media (max-width: 850px) {
+        .column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 500px;
+        }
+
+        .box {
+            width: 300px;
+            flex-direction: row;
+            justify-content: left;
+            gap: 10px;
+        }
+
+        .row p {
+            display: none;
+        }
+
+        .box h2 {
+            max-width: 300px;
+            flex-direction: row;
+        }
+
+        .box .texts {
+            text-align: start;
+        }
+    }
+
+    @media (max-width: 680px) {
+        .column {
+            gap: 15px;
+        }
+
+        .box {
+            padding: 8px;
+            width: 200px;
+        }
+
+        .box h2 {
+            max-width: 150px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        section {
+            gap: 20px;
+        }
+
+        .column {
+            gap: 10px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .box {
+            width: 100%;
+        }
+
+        .box h2 {
+            max-width: 100%;
+        }
+    }
+</style>

@@ -12,6 +12,8 @@ import "@fontsource/poppins/900.css"; */
 // Supports weights 100-900
 import "@fontsource-variable/jost";
 
+import Boton from "../components/Boton.astro";
+
 interface Props {
 	title: string;
 }
@@ -25,7 +27,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content="Página web estática para la panaderia de la Iglesia Católica Avanzada"
+			content="Página web de la panaderia benefica IFRATI"
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -35,28 +37,36 @@ const { title } = Astro.props;
 	<body>
 		<header>
 			<!--- Parte izquierda del nav - logo --->
-			<a class="nav__logo">LOGO</a>
+			<a class="nav__logo">IFRATI</a>
 
-			<!--- Lista del nav --->
-			<nav>
-				<ul class="nav__links" id="nav-links">
-					<li><a href="/">Inicio</a></li>
-					<li><a href="#">Productos</a></li>
-					<li><a href="galeria">Galería</a></li>
-					<li><a href="#">Talentos</a></li>
-					<li><a href="#">Beneficios</a></li>
-					<li><a href="#">Noticias</a></li>
-					<!-- <li><a href="#">Contáctanos</a></li> -->
-				</ul>
-			</nav>
+			<div class="content-right">
+				<!--- Lista del nav --->
+				<nav>
+					<ul class="nav__links" id="nav-links">
+						<li><a href="/">Inicio</a></li>
+						<!-- <li><a href="#">Productos</a></li> -->
+						<!-- <li><a href="galeria">Galería</a></li> -->
+						<li><a href="#">Talentos</a></li>
+						<li><a href="#">Beneficios</a></li>
+						<li><a href="#">Noticias</a></li>
+						<!-- <li><a href="#">Contáctanos</a></li> -->
+					</ul>
+				</nav>
 
-			<!--- Sección de la derecha del navbar - boton menú --->
-			<div class="menu">
-				<button class="menu-btn">
-					<div></div>
-					<div></div>
-					<div></div>
-				</button>
+				<!--- Boton de donar --->
+				<Boton
+					text="Donar"
+					icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.5285C14.35 2.42 17.98 2.49 20.2426 4.7574c2.2627 2.2673 2.3404 5.8796.236 8.2356l-8.4787 8.492-8.4785-8.492c-2.1044-2.356-2.0257-5.974.236-8.2356 2.2642-2.2642 5.8878-2.3405 8.2436-.2289Zm6.826 1.6416c-1.4991-1.5022-3.9194-1.563-5.49-.1532l-1.3351 1.1983-1.3358-1.1974c-1.5751-1.4118-3.991-1.3497-5.4945.1538-1.4898 1.4897-1.5646 3.8757-.1917 5.4516L12 18.6543l7.0202-7.0311c1.3734-1.5765 1.2989-3.958-.1931-5.4531Z"/></svg>`}
+				/>
+
+				<!--- Sección de la derecha del navbar - boton menú --->
+				<div class="menu">
+					<button class="menu-btn">
+						<div></div>
+						<div></div>
+						<div></div>
+					</button>
+				</div>
 			</div>
 		</header>
 
@@ -76,6 +86,7 @@ const { title } = Astro.props;
 			if (menu && navlist) {
 				menu.addEventListener("click", () => {
 					navlist.classList.toggle("open");
+					/* menu.classList.toggle("open"); */
 					document.body.classList.toggle("no-scroll");
 				});
 			}
@@ -89,7 +100,6 @@ const { title } = Astro.props;
 	* {
 		font-family: "Jost Variable", sans-serif;
 		font-style: normal;
-		/* font-family: "Poppins", sans-serif; */
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
@@ -97,67 +107,32 @@ const { title } = Astro.props;
 	}
 
 	:root {
-		/* COLORES PRINCIPALES */ 
-		--primary-color: #ff833e;
-		--primary-color-dark: #db6f35;
+		/* COLORES PRINCIPALES */
+		--primary-color: #e6a65d;
+		--primary-color-hover: #b67f41;
 		--color-white: #f5f5f5;
+		--color-white-hover: #d3d3d3;
+		--color-dark: #161722;
 
 		/* COLORES DE LAS LETRAS*/
-        --color-text-dark: #2f2f2f;
-        --color-text-light: #727272;
-        --color-dark: #121212;
-
-		--p-font: 1rem;
+		--color-text-dark: #2f2f2f;
+		--color-text-light: #727272;
 	}
 
 	/* HEADER */
 	header {
 		position: fixed;
+		align-items: center;
 		top: 0;
 		left: 0;
 		width: 100%;
+		height: 75px;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
 		transition: 0.3s;
-		padding: 20px 8%;
+		padding: 20px 5%;
 		z-index: 10;
-	}
-
-	header.sticky {
-		background-color: var(--color-white);
-		padding: 15px 8%;
-		transition: padding 0.3s ease-in-out;
-	}
-
-	header.sticky ul li a {
-		color: var(--color-text-dark);
-	}
-
-	/* NAV */
-	nav {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	button.menu-btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		width: 2rem;
-		border: 0;
-		background: transparent;
-		gap: 0.65rem;
-	}
-
-	button.menu-btn > div {
-		background: black;
-		height: 2px;
-		width: 100%;
-		transition: all 0.3s;
-		transform-origin: left;
+		background-color: var(--color-dark);
 	}
 
 	/* LOGO DEL NAVBAR */
@@ -167,6 +142,20 @@ const { title } = Astro.props;
 		font-weight: 900;
 		color: var(--primary-color);
 		letter-spacing: 2px;
+	}
+
+	.content-right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+	}
+
+	/* NAV */
+	nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	/* LISTA DEL NAVBAR */
@@ -185,10 +174,10 @@ const { title } = Astro.props;
 		position: relative;
 		margin: 0 15px;
 		color: var(--color-white);
-		letter-spacing: 1.5px;
-		font-weight: 400;
+		letter-spacing: 1.25px;
+		font-weight: 450;
 		/* 	transition: 0.3s; */
-		font-size: var(--p-font);
+		font-size: 0.9rem;
 		text-transform: uppercase;
 		border-bottom: 4px solid transparent;
 	}
@@ -196,6 +185,25 @@ const { title } = Astro.props;
 	header ul li a:hover {
 		color: var(--primary-color);
 		border-bottom: 3px solid var(--primary-color);
+	}
+
+	button.menu-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 2rem;
+		border: 0;
+		background: transparent;
+		gap: 0.65rem;
+	}
+
+	button.menu-btn > div {
+		background: var(--color-white);
+		height: 3px;
+		width: 100%;
+		transition: all 0.3s;
+		transform-origin: left;
 	}
 
 	.menu {
@@ -208,25 +216,16 @@ const { title } = Astro.props;
 			cursor: pointer;
 		}
 
-		header {
-			padding: 20px 5%;
-			background-color: var(--color-white);
-		}
-
-		header.sticky {
-			padding: 15px 5%;
-		}
-
 		header ul {
 			position: fixed;
 			display: block;
 			overflow-y: scroll;
 			width: 35%;
-			height: calc(100vh - 65px);
+			height: calc(100vh - 75px);
 			top: 75px;
 			right: -100%;
 			padding: 40px 30px;
-			background-color: var(--color-white);
+			background-color: var(--color-dark);
 			transition:
 				top 0.3s ease-in-out,
 				right 0.3s ease-in-out;
@@ -238,25 +237,15 @@ const { title } = Astro.props;
 
 		header ul li a {
 			font-size: 1.5rem;
-			color: var(--color-text-dark);
 			text-decoration: none;
-			transition: color 0.3s ease;
 		}
 
-		header.sticky ul {
-			top: 65px;
-		}
-
-		header:not(.sticky) ul.open {
-			background-color: var(--color-white);
+		header ul.open {
+			background-color: var(--color-dark);
 			transition:
 				top 0.3s ease-in-out,
 				right 0.3s ease-in-out;
 			top: 75px;
-		}
-
-		header:not(.sticky) ul.open a {
-			color: var(--color-text-dark);
 		}
 
 		header ul.open {
@@ -277,11 +266,7 @@ const { title } = Astro.props;
 	}
 
 	@media (max-width: 450px) {
-		header.sticky ul {
-			width: 100%;
-		}
-
-		header:not(.sticky) ul {
+		header ul {
 			width: 100%;
 		}
 

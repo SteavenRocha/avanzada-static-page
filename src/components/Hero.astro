@@ -269,6 +269,15 @@ import Boton from "../components/Boton.astro";
     }
 
     @media (max-width: 480px) {
+
+        section {
+            height: 95vh;
+        }
+
+        section::before {
+            height: 95vh;
+        }
+
         .column {
             gap: 10px;
             grid-template-columns: repeat(1, 1fr);

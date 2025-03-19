@@ -15,21 +15,23 @@ import Boton from "./Boton.astro";
 
     <div class="contenido">
         <div class="video">
-            <video src="/public/videos/video-presentacion.mp4"></video>
+            <video id="videoPlayer" src="/videos/video-presentacion.mp4"
+            ></video>
             <div class="overlay">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="128"
                     height="128"
                     viewBox="0 0 24 24"
-                    ><path
+                >
+                    <path
                         fill="none"
                         stroke="currentColor"
                         stroke-linejoin="round"
                         stroke-width="1.5"
                         d="M5.5 12V5.624c0-1.974 2.18-3.17 3.844-2.108l10 6.376c1.541.983 1.541 3.233 0 4.216l-10 6.376C7.68 21.545 5.5 20.35 5.5 18.376z"
-                    ></path></svg
-                >
+                    ></path>
+                </svg>
                 <p>Haz clic para reproducir</p>
             </div>
         </div>
@@ -130,6 +132,7 @@ import Boton from "./Boton.astro";
 
     .video {
         position: relative;
+        width: 50%;
         max-width: 50%;
         overflow: hidden;
         cursor: pointer;
@@ -188,6 +191,7 @@ import Boton from "./Boton.astro";
         }
 
         .video {
+            width: 100%;
             max-width: 100%;
         }
 

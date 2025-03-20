@@ -49,12 +49,12 @@ import Boton from "./Boton.astro";
 
             <Boton
                 text="Aportar a la causa"
-                width="210px"
+                width="220px"
                 height="50px"
                 bgColor="var(--primary-color)"
                 hoverColor="var(--primary-color-hover)"
                 fontWeight="500"
-                fontSize="clamp(0.5em, 4vw + 1rem, 1.2em)"
+                fontSize="clamp(0.5em, 4vw + 1rem, 1em)"
                 icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.1611 4.4688c2.424-2.424 6.286-2.5333 8.8397-.328 2.552-2.2053 6.4141-2.096 8.838.328 2.4196 2.4196 2.5328 6.2722.3397 8.8259l-7.7643 7.7911c-.7456.7455-1.9333.7794-2.719.1016l-.1094-.1016-7.7644-7.7911C.6283 10.741.7415 6.8884 3.1611 4.4687ZM4.5753 5.883C2.8682 7.59 2.8194 10.3276 4.429 12.0937l.1463.1532L12 19.6715l5.3026-5.304-3.5349-3.5348-1.0606 1.0607c-1.1716 1.1715-3.0711 1.1715-4.2427 0-1.1715-1.1716-1.1715-3.0711 0-4.2427l2.1012-2.1025c-1.7127-1.371-4.1948-1.3083-5.837.1884l-.1533.1464Zm8.4853 2.8284c.3905-.3905 1.0237-.3905 1.4142 0l4.242 4.2419.7078-.7064c1.7573-1.7573 1.7573-4.6066 0-6.364-1.7072-1.707-4.4447-1.7559-6.2107-.1463l-.1533.1464-3.182 3.182c-.3626.3626-.3885.9344-.0777 1.3269l.0777.0873c.3627.3626.9345.3885 1.327.0777l.0873-.0777 1.7677-1.7678Z"/></svg>`}
                 destino="#"
                 ;
@@ -87,14 +87,16 @@ import Boton from "./Boton.astro";
     }
 
     .textos h1 {
-        font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
+        font-size: clamp(2em, 4vw + 1rem, 3em);
+        font-weight: 700;
         color: var(--color-dark);
         line-height: 1.1;
         text-align: center;
     }
 
     .textos p {
-        font-size: clamp(0.8em, 4vw + 1rem, 1.2em);
+        font-size: clamp(0.5em, 4vw + 1rem, 1em);
+        font-weight: 400;
         width: 60%;
         color: var(--color-text);
         text-align: center;
@@ -119,13 +121,15 @@ import Boton from "./Boton.astro";
     }
 
     .right h1 {
-        font-size: clamp(1em, 4vw + 1rem, 1.5em);
+        font-size: clamp(0.5em, 4vw + 1rem, 1.5em);
+        font-weight: 600;
         color: var(--color-dark);
         text-align: start;
     }
 
     .right p {
-        font-size: clamp(0.8em, 4vw + 1rem, 1.2em);
+        font-size: clamp(0.5em, 4vw + 1rem, 1em);
+        font-weight: 400;
         color: var(--color-text);
         text-align: start;
     }

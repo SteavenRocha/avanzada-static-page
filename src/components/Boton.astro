@@ -5,6 +5,7 @@ interface Props {
 	height?: string;
 	bgColor?: string;
 	hoverColor?: string;
+	border?: String;
 	fontWeight?: string;
 	fontSize?: string;
 	icon?: string;
@@ -17,6 +18,7 @@ const {
 	height = "38px",
 	bgColor = "var(--primary-color)",
 	hoverColor = "var(--primary-color-hover)",
+	border,
 	fontWeight,
 	fontSize,
 	icon,
@@ -27,7 +29,7 @@ const {
 <a
 	href={destino}
 	class="donate-button"
-	style={`width: ${width}; height: ${height}; background-color: ${bgColor}; font-weight: ${fontWeight}; font-size: ${fontSize};`}
+	style={`width: ${width}; height: ${height}; background-color: ${bgColor}; font-weight: ${fontWeight}; font-size: ${fontSize}; border: ${border};`}
 	onmouseover={`this.style.backgroundColor='${hoverColor}'`}
 	onmouseout={`this.style.backgroundColor='${bgColor}'`}
 >

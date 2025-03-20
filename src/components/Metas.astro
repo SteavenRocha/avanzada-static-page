@@ -1,0 +1,347 @@
+---
+import Boton from "./Boton.astro";
+---
+
+<section>
+    <div class="textos">
+        <h1>Ayúdanos a Alcanzar Nuestras <span>Metas.</span></h1>
+
+        <p>
+            Tus donaciones nos ayudan a adquirir el equipo y los suministros que
+            necesitamos para capacitar a más jóvenes en el arte de la repostería
+            y brindarles habilidades valiosas para su futuro.
+        </p>
+    </div>
+
+    <div class="contenido">
+        <div class="container-carousel">
+            <div class="carruseles" id="slider">
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/horno.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/tetera.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/ollas.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/batidora.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/cafetera.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <div class="card">
+                        <div class="img">
+                            <img
+                                src="/public/img/metas/cucharon.jpg"
+                                alt="meta a lograr: horno"
+                            />
+                        </div>
+
+                        <div class="detalles"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="desplazamiento">
+            <div class="btn-left" title="Anterior">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><g fill="none" fill-rule="evenodd"
+                        ><path
+                            d="M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035q-.016-.005-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427q-.004-.016-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093q.019.005.029-.008l.004-.014-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014-.034.614q.001.018.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z"
+                        ></path><path
+                            fill="currentColor"
+                            d="M7.94 13.06a1.5 1.5 0 0 1 0-2.12l5.656-5.658a1.5 1.5 0 1 1 2.121 2.122L11.122 12l4.596 4.596a1.5 1.5 0 1 1-2.12 2.122l-5.66-5.658Z"
+                        ></path></g
+                    ></svg
+                >
+            </div>
+            <h3>1 de 5</h3>
+            <div class="btn-right" title="Siguiente">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 24 24"
+                    ><g fill="none" fill-rule="evenodd"
+                        ><path
+                            d="M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035q-.016-.005-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427q-.004-.016-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093q.019.005.029-.008l.004-.014-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014-.034.614q.001.018.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z"
+                        ></path><path
+                            fill="currentColor"
+                            d="M16.06 10.94a1.5 1.5 0 0 1 0 2.12l-5.656 5.658a1.5 1.5 0 1 1-2.121-2.122L12.879 12 8.283 7.404a1.5 1.5 0 0 1 2.12-2.122l5.658 5.657Z"
+                        ></path></g
+                    ></svg
+                >
+            </div>
+        </div>
+
+        <Boton
+            text="Ver todas las metas"
+            width="220px"
+            height="50px"
+            bgColor="var(--color-white)"
+            hoverColor="var(--color-white-hover)"
+            fontWeight="500"
+            fontSize="clamp(0.8em, 4vw + 1rem, 1em)"
+            border="1px solid var(--color-dark-border)"
+            destino="#"
+            ;
+        />
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const btnLeft = document.querySelector(".btn-left") as HTMLElement;
+        const btnRight = document.querySelector(".btn-right") as HTMLElement;
+        const slider = document.querySelector("#slider") as HTMLElement;
+        const sliderSections = document.querySelectorAll(".slider-section");
+        const pageIndicator = document.querySelector(".desplazamiento h3") as HTMLElement;
+
+        if (
+            !btnLeft ||
+            !btnRight ||
+            !slider ||
+            !pageIndicator ||
+            sliderSections.length === 0
+        ) {
+            console.error(
+                "Error: No se encontraron los elementos del carrusel.",
+            );
+            return;
+        }
+
+        let operacion = 0;
+        let counter = 0;
+        const totalSlides = sliderSections.length;
+        let slidesPerStep = window.innerWidth <= 600 ? 1 : 2;
+        const widthImg = 100 / totalSlides;
+
+        function updateUI() {
+            pageIndicator.textContent = `${counter + 1} de ${totalSlides}`;
+            btnLeft.classList.toggle("disable", counter === 0);
+            btnRight.classList.toggle(
+                "disable",
+                counter >= totalSlides - slidesPerStep,
+            );
+        }
+
+        function moveToRight() {
+            if (counter < totalSlides - slidesPerStep) {
+                counter += slidesPerStep;
+                if (counter >= totalSlides) counter = totalSlides - 1;
+                operacion = widthImg * counter;
+                slider.style.transform = `translate(-${operacion}%)`;
+                slider.style.transition = "all ease .6s";
+            }
+            updateUI();
+        }
+
+        function moveToLeft() {
+            if (counter > 0) {
+                counter -= slidesPerStep;
+                if (counter < 0) counter = 0;
+                operacion = widthImg * counter;
+                slider.style.transform = `translate(-${operacion}%)`;
+                slider.style.transition = "all ease .6s";
+            }
+            updateUI();
+        }
+
+        window.addEventListener("resize", () => {
+            slidesPerStep = window.innerWidth <= 600 ? 1 : 2;
+            updateUI();
+        });
+
+        btnLeft.addEventListener("click", moveToLeft);
+        btnRight.addEventListener("click", moveToRight);
+
+        updateUI();
+    });
+</script>
+
+<style>
+    section:not(.carruseles section) {
+        padding: 100px 5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-white);
+        gap: 60px;
+        overflow: hidden;
+    }
+
+    .textos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .textos h1 {
+        font-size: clamp(2.5em, 4vw + 1rem, 3.5em);
+        color: var(--color-dark);
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .textos p {
+        font-size: clamp(0.8em, 4vw + 1rem, 1.2em);
+        width: 60%;
+        color: var(--color-text);
+        text-align: center;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .container-carousel {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .carruseles {
+        width: 300%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slider-section {
+        width: calc(100% / 3);
+        height: 100%;
+    }
+
+    .slider-section .card {
+        width: 100%;
+        height: 100%;
+        border: 1px solid red;
+    }
+
+    .img {
+        width: 50%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .desplazamiento {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .desplazamiento h3 {
+        font-size: clamp(0.8em, 4vw + 1rem, 1em);
+        font-weight: 500;
+    }
+
+    .btn-left,
+    .btn-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: var(--color-white);
+        border: 1px solid var(--color-dark);
+    }
+
+    .btn-left:hover,
+    .btn-right:hover {
+        background-color: var(--color-white-hover);
+    }
+
+    .btn-left svg,
+    .btn-right svg {
+        color: var(--color-dark);
+        width: 20px;
+        height: 20px;
+    }
+
+    .disable {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+        .carruseles {
+            width: 600%;
+        }
+
+        .slider-section {
+            width: calc(100% / 6);
+        }
+    }
+</style>

@@ -1,0 +1,51 @@
+---
+interface Props {
+    text: string;
+    bgColor?: string;
+    borderRadius?: string;
+    fontSize?: string;
+    color?: string;
+    icon?: string;
+}
+
+const {
+    text,
+    bgColor = "var(--primary-color)",
+    borderRadius = "none",
+    fontSize = "0.8em",
+    color = "black",
+    icon,
+} = Astro.props;
+---
+
+<div
+    class="tag"
+    style={`background-color: ${bgColor}; border-radius: ${borderRadius}; color: ${color};`}
+>
+    {icon && <span class="icon" set:html={icon} />}
+    <p style={`font-size: ${fontSize};`}>{text}</p>
+</div>
+
+<style>
+    .tag {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 4px;
+        gap: 4px;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1em;
+        color: inherit; 
+    }
+
+    .icon svg {
+        fill: currentColor; 
+        width: 1em;
+        height: 1em;
+    }
+</style>

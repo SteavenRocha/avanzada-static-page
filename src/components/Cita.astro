@@ -32,11 +32,33 @@
 
 <style>
     section {
+        position: relative;
         padding: 60px 0;
-        background-color: #1b1b24;
+        background-image: url("/public/img/hero-img.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+            0,
+            0,
+            0,
+            0.65
+        ); 
+        z-index: 1;
     }
 
     .cita {
+        position: relative;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -1,80 +1,177 @@
-<!-- ---
-
+---
+import Tag from "./ui/tag.astro";
+import Boton from "./ui/Boton.astro";
 ---
 
 <section>
-    <div class="container">
-        <div class="title">
-            <h1>Productos Destacados</h1>
-            <p></p>
+    <div class="textos">
+        <h1>Conoce Algunos de Nuestro <span> Productos.</span></h1>
+    </div>
+
+    <div class="productos">
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/1.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Artisan Sourdough Bread</h1>
+            </div>
         </div>
 
-        <div class="carousel">
-           
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/2.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Buttery Croissants</h1>
+            </div>
+        </div>
+
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/3.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Artisan Sourdough Bread</h1>
+            </div>
+        </div>
+
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/4.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Artisan Sourdough Bread</h1>
+            </div>
+        </div>
+
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/5.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Artisan Sourdough Bread</h1>
+            </div>
+        </div>
+
+        <div class="card-producto">
+            <div class="img">
+                <img src="/img/productos/1.jpg" alt="" />
+            </div>
+            <div class="nombre-pan">
+                <h1>Artisan Sourdough Bread</h1>
+            </div>
         </div>
     </div>
+
+    <Boton
+            text="Ver más"
+            width="140px"
+            height="45px"
+            bgColor="var(--color-white)"
+            hoverColor="var(--color-white-hover)"
+            fontWeight="500"
+            fontSize="var(--font-size-boton)"
+            border="0.125em solid var(--color-dark-border)"
+            icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16V7H8V5h11v11zm-5 5v-9H3v-2h11v11z"/></svg>`}
+            destino="#"
+            ;
+        />
 </section>
-
-<script>
-
-</script>
 
 <style>
     section {
-        position: relative;
-        box-sizing: border-box;
-        height: 95vh;
-    }
-
-    .container {
-        position: relative;
-        box-sizing: border-box;
+        padding: 80px 5%;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 50px 10%;
-        gap: 50px;
-        border: 1px solid violet;
+        background-color: var(--color-white);
+        overflow: hidden;
     }
 
-    .title {
-        text-align: left;
-        width: 100%;
-        border: 1px solid green;
-    }
-
-    .title h1 {
-        text-transform: uppercase;
-        font-size: clamp(1.5em, 4vw + 1rem, 2em);
-        color: black;
-        font-weight: 600;
-    }
-
-    .carousel {
-        width: 100%;
-    }
-</style> -->
-
-<section>
-    
-    <p>
-        PRODUCTOS
-    </p>
-
-</section>
-
-<style>
-    section {
+    .textos {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 500px;
-        border: 1px solid magenta;
+        gap: 15px;
     }
 
-    section p{
-        font-size: 2rem;
-        font-weight: 900;
+    .textos h1 {
+        font-size: var(--font-size-titulo);
+        font-weight: 600;
+        color: var(--color-dark);
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding-top: 50px;
+        padding-bottom: 25px;
+        gap: 15px;
+    }
+
+    .card-producto {
+        position: relative;
+    }
+
+    .img {
+        overflow: hidden;
+        cursor: pointer;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .img:hover img {
+        transform: scale(1.025);
+        filter: brightness(0.7);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        transition:
+            transform 0.5s ease,
+            filter 0.5s ease;
+    }
+
+    .nombre-pan {
+        position: absolute;
+        color: var(--color-white);
+        padding-left: 10px;
+        padding-bottom: 20px;
+        display: flex;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .card-producto:hover .nombre-pan {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 750px) {
+        .productos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
     }
 </style>

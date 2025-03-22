@@ -3,38 +3,51 @@ import Boton from "../components/ui/Boton.astro";
 ---
 
 <section>
-    <div class="row">
-        <h1>Tus Donaciones <span>Cambian</span> Vidas</h1>
+    <div class="contenido">
+        <div class="left">
+            <h1>Horneando Oportunidades <span>Transformando </span>Vidas</h1>
+            <p>
+                Cada pan que hacemos no solo alimenta el cuerpo, sino que nutre
+                el futuro de jóvenes con ganas de aprender y crecer.
+            </p>
 
-        <p>
-            Ayúdanos a empoderar a jóvenes con nuestro programa de
-            capacitación. Tu aporte les brinda habilidades, confianza y un
-            camino hacia la independencia.
-        </p>
-
-        <div class="botones">
-            <Boton
-                text="Donar"
-                height="50px"
-                fontWeight="500"
-                fontSize="var(--font-size-boton)"
-                icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.5285C14.35 2.42 17.98 2.49 20.2426 4.7574c2.2627 2.2673 2.3404 5.8796.236 8.2356l-8.4787 8.492-8.4785-8.492c-2.1044-2.356-2.0257-5.974.236-8.2356 2.2642-2.2642 5.8878-2.3405 8.2436-.2289Zm6.826 1.6416c-1.4991-1.5022-3.9194-1.563-5.49-.1532l-1.3351 1.1983-1.3358-1.1974c-1.5751-1.4118-3.991-1.3497-5.4945.1538-1.4898 1.4897-1.5646 3.8757-.1917 5.4516L12 18.6543l7.0202-7.0311c1.3734-1.5765 1.2989-3.958-.1931-5.4531Z"/></svg>`}
-                destino="#"
-            />
-            <Boton
-                text="Leer Más"
-                height="50px"
-                bgColor="var(--color-white)"
-                hoverColor="var(--color-white-hover)"
-                fontWeight="500"
-                fontSize="var(--font-size-boton)"
-                destino="#proposito"
-                ;
-            />
+            <div class="botones">
+                <Boton
+                    text="Descubre Más"
+                    height="45px"
+                    width="150px"
+                    bgColor="var(--color-white)"
+                    hoverColor="var(--color-white-hover)"
+                    fontWeight="600"
+                    fontSize="var(--font-size-boton)"
+                    destino="#proposito"
+                />
+                <Boton
+                    text="Donar ahora"
+                    width="170px"
+                    height="45px"
+                    hoverColor="var(--primary-color)"
+                    fontWeight="600"
+                    fontSize="var(--font-size-boton)"
+                    destino="#"
+                    icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.5285C14.35 2.42 17.98 2.49 20.2426 4.7574c2.2627 2.2673 2.3404 5.8796.236 8.2356l-8.4787 8.492-8.4785-8.492c-2.1044-2.356-2.0257-5.974.236-8.2356 2.2642-2.2642 5.8878-2.3405 8.2436-.2289Zm6.826 1.6416c-1.4991-1.5022-3.9194-1.563-5.49-.1532l-1.3351 1.1983-1.3358-1.1974c-1.5751-1.4118-3.991-1.3497-5.4945.1538-1.4898 1.4897-1.5646 3.8757-.1917 5.4516L12 18.6543l7.0202-7.0311c1.3734-1.5765 1.2989-3.958-.1931-5.4531Z"/></svg>`}
+                    animacion={true}
+                />
+            </div>
         </div>
     </div>
 
-    <div class="column">
+    <a href="#proposito" class="flecha">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 7"
+            fill="currentColor"
+            ><path
+                d="M8 6.5a.47.47 0 0 1-.35-.15l-4.5-4.5c-.2-.2-.2-.51 0-.71s.51-.2.71 0l4.15 4.15 4.14-4.14c.2-.2.51-.2.71 0s.2.51 0 .71l-4.5 4.5c-.1.1-.23.15-.35.15Z"
+            ></path></svg
+        >
+    </a>
+    <!--  <div class="column">
         <div class="box">
             <div class="icon">
                 <svg
@@ -110,68 +123,71 @@ import Boton from "../components/ui/Boton.astro";
                 <h2>Compromiso con el futuro</h2>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 
 <script></script>
 
 <style>
     section {
-        padding: 30px 5%;
+        position: relative;
+        padding: 20px 5%;
+        padding-top: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: end;
+        justify-content: center;
         overflow: hidden;
         height: 100vh;
-        gap: 20px;
-        background-image: url("/public/img/hero-img.jpg");
+        max-height: 1240px;
+        background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.8) 20%,
+                rgba(0, 0, 0, 0.7) 35%,
+                rgba(0, 0, 0, 0.5) 50%,
+                rgba(0, 0, 0, 0.2) 70%,
+                rgba(0, 0, 0, 0) 100%
+            ),
+            url("/img/hero-img.avif");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
-    section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
+    .contenido {
         width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.65);
-        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        max-width: 1280px;
     }
 
-    section > * {
-        position: relative;
-        z-index: 2;
-    }
-
-    .row {
+    .left {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         justify-content: center;
+        width: 50%;
         gap: 15px;
     }
 
-    .row h1 {
-        font-size: var(--font-size-titulo);
+    .left h1 {
+        font-size: var(--font-size-titulo-hero);
         font-weight: 700;
         line-height: 1.1;
-        text-align: center;
+        text-align: start;
         color: var(--color-white);
     }
 
-    .row span {
+    .left span {
         color: var(--primary-color);
     }
 
-    .row p {
-        font-size: var(--font-size-parrafo);
+    .left p {
+        font-size: var(--font-size-parrafo-hero);
         font-weight: 400;
-        text-align: center;
-        width: 70%;
+        text-align: start;
+        width: 100%;
         color: var(--color-white);
     }
 
@@ -231,58 +247,44 @@ import Boton from "../components/ui/Boton.astro";
         color: var(--color-white);
     }
 
-    @media (max-width: 850px) {
-        .column {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 500px;
-        }
+    .flecha {
+        position: absolute;
+        bottom: 2%;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        animation: bounce 1.5s infinite;
+    }
 
-        .box {
-            width: 300px;
-            flex-direction: row;
-            justify-content: left;
-            gap: 10px;
-        }
+    .flecha svg {
+        width: 100%;
+        height: 100%;
+        color: var(--color-white);
+    }
 
-        .row p {
-            display: none;
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0);
         }
-
-        .box h2 {
-            max-width: 300px;
-            flex-direction: row;
-        }
-
-        .box .texts {
-            text-align: start;
+        50% {
+            transform: translateY(-5px);
         }
     }
 
-    @media (max-width: 680px) {
-        .column {
-            gap: 15px;
-        }
-
-        .box {
-            padding: 8px;
-            width: 200px;
-        }
-
-        .box h2 {
-            max-width: 150px;
-        }
-    }
-
-    @media (max-width: 480px) {
-
+    @media (max-width: 768px) {
         section {
-            height: 100svh
+            height: 100svh;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("/img/hero-img.avif");
+            background-size: cover;
+            background-position: center;
         }
 
-        section::before {
-            height: 100svh;
+        .left {
+            width: 100%;
         }
 
         .column {
@@ -297,6 +299,19 @@ import Boton from "../components/ui/Boton.astro";
 
         .box h2 {
             max-width: 100%;
+        }
+    }
+
+    @media (max-height: 480px) {
+        .left {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .botones {
+            width: 100%;
+            flex-direction: column;
         }
     }
 </style>

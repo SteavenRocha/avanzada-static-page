@@ -79,18 +79,22 @@ const { title } = Astro.props;
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
-			const header = document.querySelector("header");
+			const root = document.documentElement;
+			/* const header = document.querySelector("header"); */
 			const menu = document.querySelector(".menu-btn");
 			const navlist = document.querySelector(".nav__links");
 
 			window.addEventListener("scroll", () => {
-				header?.classList.toggle("sticky", window.scrollY > 0);
+				if (window.scrollY > 0) {
+					root.style.setProperty("--sticky", "60px"); 
+				} else {
+					root.style.setProperty("--sticky", "75px"); 
+				}
 			});
 
 			if (menu && navlist) {
 				menu.addEventListener("click", () => {
 					navlist.classList.toggle("open");
-					/* menu.classList.toggle("open"); */
 					document.body.classList.toggle("no-scroll");
 				});
 			}
@@ -102,7 +106,7 @@ const { title } = Astro.props;
 	html,
 	body,
 	* {
-		font-family: 'Poppins', sans-serif;
+		font-family: "Poppins", sans-serif;
 		/* font-family: "Jost Variable", sans-serif; */
 		font-style: normal;
 		margin: 0;
@@ -114,7 +118,7 @@ const { title } = Astro.props;
 
 	:root {
 		/* COLORES PRINCIPALES */
-		--primary-color: #F4A261;
+		--primary-color: #f4a261;
 		--primary-color-hover: #a07a4f;
 		--primary-color-dark: #cf9048;
 		--color-white: #f5f5f5;
@@ -129,9 +133,9 @@ const { title } = Astro.props;
 		--color-text-light: #727272;
 
 		/* TAMAÑOS DE FUENTES */
-		--font-size-titulo: clamp(1.75em, 4vw + 1rem, 3em);	
+		--font-size-titulo: clamp(1.75em, 4vw + 1rem, 3em);
 		--font-size-subtitulo: clamp(1em, 4vw + 1rem, 1.5em);
-		--font-size-subtitulo-tiny: clamp(1em, 4vw + 1rem, 1.2em);	
+		--font-size-subtitulo-tiny: clamp(1em, 4vw + 1rem, 1.2em);
 		--font-size-parrafo: clamp(0.9em, 4vw + 1rem, 1em);
 		--font-size-boton: 1em;
 
@@ -143,7 +147,7 @@ const { title } = Astro.props;
 		--font-weight-parrafo: 400;
 
 		/* TAMAÑOS DE HERO */
-		--font-size-titulo-hero: clamp(1.75em, 4vw + 1rem, 3em);	
+		--font-size-titulo-hero: clamp(1.75em, 4vw + 1rem, 3em);
 		--font-size-parrafo-hero: clamp(1em, 4vw + 1rem, 1.125em);
 
 		/* TAMAÑOS DE PANTALLA */
@@ -157,7 +161,7 @@ const { title } = Astro.props;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 75px;
+		height: var(--sticky);
 		display: flex;
 		justify-content: space-between;
 		transition: 0.3s;
@@ -167,7 +171,7 @@ const { title } = Astro.props;
 	}
 
 	header.sticky {
-		height: 60px;
+		height: var(--sticky);
 	}
 
 	/* LOGO DEL NAVBAR */
@@ -256,8 +260,8 @@ const { title } = Astro.props;
 			display: block;
 			overflow-y: scroll;
 			width: 35%;
-			height: calc(100vh - 75px);
-			top: 75px;
+			height: calc(100vh - var(--sticky));
+			top: var(--sticky);
 			right: -100%;
 			padding: 40px 30px;
 			background-color: var(--navbar-color);
@@ -280,7 +284,7 @@ const { title } = Astro.props;
 			transition:
 				top 0.3s ease-in-out,
 				right 0.3s ease-in-out;
-			top: 75px;
+			top: var(--sticky);
 		}
 
 		header ul.open {

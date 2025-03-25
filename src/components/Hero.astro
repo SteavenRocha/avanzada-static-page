@@ -25,7 +25,7 @@ import Boton from "../components/ui/Boton.astro";
                 />
                 <Boton
                     text="Donar ahora"
-                    width="180px"
+                    width="170px"
                     height="45px"
                     hoverColor="var(--primary-color)"
                     fontWeight="500"
@@ -167,7 +167,7 @@ import Boton from "../components/ui/Boton.astro";
         display: flex;
         align-items: center;
         gap: 50px;
-        max-width: 1280px;
+        max-width: var(--max-width);
     }
 
     .left {
@@ -181,7 +181,7 @@ import Boton from "../components/ui/Boton.astro";
 
     .left h1 {
         font-size: var(--font-size-titulo-hero);
-        font-weight: 700;
+        font-weight: var(--font-weight-titulo-bold);
         line-height: 1.1;
         text-align: start;
         color: var(--color-dark);
@@ -193,10 +193,10 @@ import Boton from "../components/ui/Boton.astro";
 
     .left p {
         font-size: var(--font-size-parrafo-hero);
-        font-weight: 400;
+        font-weight: var(--font-weight-parrafo);
         text-align: start;
         width: 100%;
-        color: var(--color-dark);
+        color: var(--color-text);
     }
 
     .botones {

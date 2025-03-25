@@ -3,7 +3,18 @@ import Boton from "./ui/Boton.astro";
 ---
 
 <section>
-    <div class="cantainer">
+    <div class="textos">
+        <h1>
+            Conoce Nuestro <span>Trabajo</span>
+        </h1>
+
+        <p>
+            Conoce cómo nuestro programa de panadería transforma vidas,
+            desarrolla habilidades y crea oportunidades para los jóvenes de
+            nuestra comunidad.
+        </p>
+    </div>
+    <div class="video-container">
         <div class="video">
             <video id="videoPlayer" src="/videos/video-presentacion.mp4"
             ></video>
@@ -26,42 +37,189 @@ import Boton from "./ui/Boton.astro";
             </div>
         </div>
 
-        <div class="titulo">
-            <h1>
-                Transforma Buenas <span>Intenciones</span> en Buenas <span
-                    >Acciones</span
-                >
-            </h1>
-
+        <div class="descripcion">
             <p>
-                Conoce cómo nuestro programa de panadería transforma vidas,
-                desarrolla habilidades y crea oportunidades para los jóvenes de
-                nuestra comunidad.
+                "Construyendo Juntos: Nuestra Historia" - Un documental sobre el
+                impacto de nuestro programa
             </p>
-        </div>
-
-        <div class="contenido">
-            <h1>"Levantándonos Juntos: La Historia de <span>IFRATI</span>"</h1>
-            <p>
-                Este breve documental muestra nuestra trayectoria, el impacto
-                que hemos generado y las historias de jóvenes cuyas vidas han
-                sido transformadas gracias a nuestro programa de capacitación.
-            </p>
-
-            <Boton
-                text="Aportar a la causa"
-                width="220px"
-                height="50px"
-                bgColor="var(--primary-color)"
-                hoverColor="var(--primary-color-hover)"
-                fontWeight="500"
-                fontSize="var(--font-size-boton)"
-                icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.1611 4.4688c2.424-2.424 6.286-2.5333 8.8397-.328 2.552-2.2053 6.4141-2.096 8.838.328 2.4196 2.4196 2.5328 6.2722.3397 8.8259l-7.7643 7.7911c-.7456.7455-1.9333.7794-2.719.1016l-.1094-.1016-7.7644-7.7911C.6283 10.741.7415 6.8884 3.1611 4.4687ZM4.5753 5.883C2.8682 7.59 2.8194 10.3276 4.429 12.0937l.1463.1532L12 19.6715l5.3026-5.304-3.5349-3.5348-1.0606 1.0607c-1.1716 1.1715-3.0711 1.1715-4.2427 0-1.1715-1.1716-1.1715-3.0711 0-4.2427l2.1012-2.1025c-1.7127-1.371-4.1948-1.3083-5.837.1884l-.1533.1464Zm8.4853 2.8284c.3905-.3905 1.0237-.3905 1.4142 0l4.242 4.2419.7078-.7064c1.7573-1.7573 1.7573-4.6066 0-6.364-1.7072-1.707-4.4447-1.7559-6.2107-.1463l-.1533.1464-3.182 3.182c-.3626.3626-.3885.9344-.0777 1.3269l.0777.0873c.3627.3626.9345.3885 1.327.0777l.0873-.0777 1.7677-1.7678Z"/></svg>`}
-                destino="#"
-                ;
-            />
         </div>
     </div>
+
+    <div class="caracteristicas">
+        <h2>Características de Nuestro Programa</h2>
+
+        <div class="cards">
+            <div class="card">
+                <div class="svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                        ><path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M14.25 9.25V6L8 2.75 1.75 6 8 9.25l3.25-1.5v3.5c0 1-1.5 2-3.25 2s-3.25-1-3.25-2v-3.5"
+                        ></path></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Formación técnica especializada</h3>
+                    <p>
+                        Capacitación práctica en técnicas de panadería y
+                        repostería con estándares profesionales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="svg">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        ><g
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            ><circle cx="5" cy="9" r="2.25"></circle><circle
+                                cx="11"
+                                cy="4"
+                                r="2.25"></circle><path
+                                d="M7.75 9.25c0-1 .75-3 3.25-3s3.25 2 3.25 3m-12.5 5c0-1 .75-3 3.25-3s3.25 2 3.25 3"
+                            ></path></g
+                        ></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Mentoría personalizada</h3>
+                    <p>
+                        Acompañamiento individual por profesionales
+                        experimentados que guían el desarrollo personal y
+                        profesional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="svg">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 19a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0 9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13"
+                        ></path></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Habilidades para la vida</h3>
+                    <p>
+                        Talleres de comunicación, trabajo en equipo, finanzas
+                        personales y resolución de problemas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="svg">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        ><g fill="none"
+                            ><path
+                                stroke-width="1.5"
+                                d="M2 14c0-3.771 0-5.657 1.172-6.828S6.229 6 10 6h4c3.771 0 5.657 0 6.828 1.172S22 10.229 22 14s0 5.657-1.172 6.828S17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172S2 17.771 2 14Zm14-8c0-1.886 0-2.828-.586-3.414S13.886 2 12 2s-2.828 0-3.414.586S8 4.114 8 6"
+                            ></path><path
+                                d="M17 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+                            ></path></g
+                        ></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Apoyo para emprendimiento</h3>
+                    <p>
+                        Asesoría para quienes desean iniciar su propio negocio,
+                        incluyendo plan de negocios y microcréditos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="svg">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        ><g
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            ><path
+                                d="M19.5 12.572 12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"
+                            ></path><path
+                                d="M12 6 8.707 9.293a1 1 0 0 0 0 1.414l.543.543c.69.69 1.81.69 2.5 0l1-1a3.18 3.18 0 0 1 4.5 0l2.25 2.25m-7 3 2 2M15 13l2 2"
+                            ></path></g
+                        ></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Conexión con empleadores</h3>
+                    <p>
+                        Red de empresas aliadas que ofrecen oportunidades
+                        laborales a nuestros graduados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="svg">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        ><path
+                            fill-rule="evenodd"
+                            d="M12 2.75a6.25 6.25 0 1 0 0 12.5 6.25 6.25 0 0 0 0-12.5M4.25 9a7.75 7.75 0 1 1 13.06 5.645 1 1 0 0 1 .062.157l.65 2.369c.303 1.107.548 1.998.659 2.69.109.678.131 1.376-.248 1.944-.216.323-.51.588-.856.764-.63.32-1.317.163-1.932-.07-.628-.236-1.416-.647-2.384-1.152l-.047-.024c-.724-.377-.913-.462-1.095-.481a1 1 0 0 0-.238 0c-.182.019-.37.104-1.095.481l-.047.024c-.968.505-1.756.915-2.384 1.152-.615.233-1.302.39-1.932.07a2.3 2.3 0 0 1-.856-.764c-.379-.568-.357-1.266-.248-1.944.111-.692.356-1.583.66-2.69l.649-2.37a1 1 0 0 1 .062-.156A7.73 7.73 0 0 1 4.25 9m3.71 6.615-.522 1.906c-.32 1.164-.541 1.976-.638 2.578-.1.625-.025.813.015.872a.8.8 0 0 0 .289.262c.023.011.166.073.722-.137.533-.201 1.24-.569 2.267-1.103l.103-.054c.568-.297 1.025-.535 1.526-.589q.278-.03.556 0c.5.053.958.292 1.526.589l.103.054c1.026.534 1.734.902 2.267 1.103.556.21.7.148.722.137a.8.8 0 0 0 .29-.262c.04-.06.114-.247.014-.872-.097-.602-.319-1.414-.637-2.578l-.523-1.906A7.7 7.7 0 0 1 12 16.75a7.7 7.7 0 0 1-4.04-1.135"
+                            clip-rule="evenodd"></path></svg
+                    >
+                </div>
+
+                <div class="detalle">
+                    <h3>Seguimiento post-programa</h3>
+                    <p>
+                        Acompañamiento durante un año después de la graduación
+                        para asegurar una transición exitosa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <Boton
+        text="Aportar a la causa"
+        width="220px"
+        height="45px"
+        bgColor="var(--primary-color)"
+        hoverColor="var(--primary-color-hover)"
+        fontWeight="500"
+        fontSize="var(--font-size-boton)"
+        icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.1611 4.4688c2.424-2.424 6.286-2.5333 8.8397-.328 2.552-2.2053 6.4141-2.096 8.838.328 2.4196 2.4196 2.5328 6.2722.3397 8.8259l-7.7643 7.7911c-.7456.7455-1.9333.7794-2.719.1016l-.1094-.1016-7.7644-7.7911C.6283 10.741.7415 6.8884 3.1611 4.4687ZM4.5753 5.883C2.8682 7.59 2.8194 10.3276 4.429 12.0937l.1463.1532L12 19.6715l5.3026-5.304-3.5349-3.5348-1.0606 1.0607c-1.1716 1.1715-3.0711 1.1715-4.2427 0-1.1715-1.1716-1.1715-3.0711 0-4.2427l2.1012-2.1025c-1.7127-1.371-4.1948-1.3083-5.837.1884l-.1533.1464Zm8.4853 2.8284c.3905-.3905 1.0237-.3905 1.4142 0l4.242 4.2419.7078-.7064c1.7573-1.7573 1.7573-4.6066 0-6.364-1.7072-1.707-4.4447-1.7559-6.2107-.1463l-.1533.1464-3.182 3.182c-.3626.3626-.3885.9344-.0777 1.3269l.0777.0873c.3627.3626.9345.3885 1.327.0777l.0873-.0777 1.7677-1.7678Z"/></svg>`}
+        destino="#"
+        ;
+    />
 </section>
 
 <script></script>
@@ -70,84 +228,59 @@ import Boton from "./ui/Boton.astro";
     section {
         padding: 50px 5%;
         height: 100%;
+        gap: 50px;
         background-color: var(--color-white);
         overflow: hidden;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .cantainer {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(2, auto);
-        align-items: center;
-        gap: 30px;
-        max-width: 2022.09px;
-    }
-
-    .titulo {
+    .textos {
+        max-width: var(--max-width);
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         justify-content: center;
         gap: 15px;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
     }
 
-    .titulo h1 {
+    .textos h1 {
         font-size: var(--font-size-titulo);
-        font-weight: 600;
+        font-weight: var(--font-weight-titulo);
         color: var(--color-dark);
         line-height: 1.1;
-        text-align: start;
+        text-align: center;
     }
 
-    .titulo p {
+    .textos p {
         font-size: var(--font-size-parrafo);
-        font-weight: 400;
-        width: 100%;
+        font-weight: var(--font-weight-parrafo);
+        width: 60%;
         color: var(--color-text);
-        text-align: start;
+        text-align: center;
     }
 
-    span {
+    .textos span {
         color: var(--primary-color);
     }
 
-    .contenido {
+    .video-container {
         display: flex;
         flex-direction: column;
-        align-items: start;
-        justify-content: start;
-        gap: 15px;
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    }
-
-    .contenido h1 {
-        font-size: var(--font-size-subtitulo);
-        font-weight: 500;
-        color: var(--color-dark);
-        text-align: start;
-    }
-
-    .contenido p {
-        font-size: var(--font-size-parrafo);
-        font-weight: 400;
-        color: var(--color-text);
-        text-align: start;
+        align-items: center;
+        gap: 10px;
     }
 
     .video {
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: 900px;
+        height: 500px;
+        border-radius: 10px;
         overflow: hidden;
         cursor: pointer;
-        grid-column: 1 / 2;
-        grid-row: 1 / 3;
+        max-width: var(--max-width);
     }
 
     video {
@@ -156,6 +289,11 @@ import Boton from "./ui/Boton.astro";
         border-radius: 10px;
         display: block;
         object-fit: cover;
+    }
+
+    .descripcion p {
+        font-size: 0.9em;
+        color: var(--color-text-light);
     }
 
     .overlay {
@@ -193,44 +331,96 @@ import Boton from "./ui/Boton.astro";
         transition: transform 0.3s ease;
     }
 
-    @media (max-width: 1050px) {
-        section {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            gap: 50px;
-        }
+    .caracteristicas {
+        max-width: var(--max-width);
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+    }
 
-        .titulo {
-            grid-column: 1 / -1;
-            grid-row: 1;
-        }
+    .caracteristicas h2 {
+        text-align: center;
+        font-size: var(--font-size-subtitulo);
+        font-weight: var(--font-weight-subtitulo-bold);
+    }
 
-        .titulo h1 {
-            text-align: center;
-        }
+    .cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
 
-        .titulo p {
-            text-align: center;
-        }
+    .card {
+        display: flex;
+        cursor: default;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 1px solid rgba(128, 128, 128, 0.3);
+    }
 
+    .card:hover {
+        border-color: rgba(128, 128, 128, 0.5);
+        transition: border-color 0.3s ease;
+    }
+
+    .detalle {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .detalle h3 {
+        font-size: var(--font-size-subtitulo-tiny);
+        text-align: start;
+        font-weight: var(--font-weight-titulo);
+        color: var(--color-dark);
+    }
+
+    .detalle p {
+        font-size: var(--font-size-parrafo);
+        text-align: start;
+        font-weight: var(--font-weight-parrafo);
+        color: var(--color-text);
+    }
+
+    .svg {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .svg svg {
+        color: var(--primary-color);
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (max-width: 1024px) {
         .video {
-            grid-column: 1 / -1;
-            grid-row: 2;
+            width: auto;
+            height: auto;
+            max-width: 900px;
+            max-height: 900px;
         }
 
-        .contenido {
-            grid-column: 1 / -1;
-            grid-row: 3;
-            align-items: center;
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 780px) {
+        .textos p {
+            width: 100%;
         }
 
-        .contenido h1 {
-            text-align: center;
-        }
-
-        .contenido p {
-            text-align: center;
+        .cards {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 1fr);
         }
     }
 </style>
